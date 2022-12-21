@@ -5,11 +5,24 @@
 \alias{max_score_2}
 \title{Scores and scales for Fourier-fitted ridge curves}
 \usage{
-ridge_scores(x, mu = c(0, 0), coefs = list(cos_a = c(0, 0), sin_b = 0),
-  ind_var = 1, N = 500, scale = TRUE, at2 = TRUE)
+ridge_scores(
+  x,
+  mu = c(0, 0),
+  coefs = list(cos_a = c(0, 0), sin_b = 0),
+  ind_var = 1,
+  N = 500,
+  scale = TRUE,
+  at2 = TRUE
+)
 
-max_score_2(mu = c(0, 0), coefs = list(cos_a = c(0, 0), sin_b = 0),
-  ind_var = 1, L = 25, f = 2, at2 = TRUE)
+max_score_2(
+  mu = c(0, 0),
+  coefs = list(cos_a = c(0, 0), sin_b = 0),
+  ind_var = 1,
+  L = 25,
+  f = 2,
+  at2 = TRUE
+)
 }
 \arguments{
 \item{x}{a matrix of size \code{c(nx, 2)} with angular coordinates.}

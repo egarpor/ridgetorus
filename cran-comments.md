@@ -1,6 +1,6 @@
 ## Test environments
 
-* local R installation, R 4.1.0
+* local R installation, R 4.2.2
 * ubuntu 16.04 (on travis-ci), R 3.5.0
 * win-builder (release, devel)
 * Windows Server 2008 R2 SP1, R-release, 32/64 bit
@@ -19,3 +19,5 @@
 0 errors | 0 warnings | 0 notes
 
 * This is a new release.
+* NOTE "Possibly misspelled words in DESCRIPTION" has been double checked -- words are correct.
+* NOTE "Found the following (possibly) invalid URLs" has been double checked -- URLs are correct.

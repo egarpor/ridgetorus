@@ -49,7 +49,7 @@
 #'
 #' x <- r_bvm(n = n, mu = c(2, 1), kappa = c(3, 2, 0))
 #' fit <- ridge_pca(x = x, type = "bvm")
-#' show_ridge_pca(fit = fit, col_data = "red")}
+#' show_ridge_pca(fit = fit, col_data = "red")
 #'
 #' ## Bivariate wrapped Cauchy
 #'

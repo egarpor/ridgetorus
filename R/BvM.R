@@ -304,8 +304,8 @@ fit_bvm_mle <- function(x, start = NULL, M = 25, lower = c(-pi, -pi, 0, 0, -30),
       R1 <- DirStats::norm2(colMeans(x1))
       R2 <- DirStats::norm2(colMeans(x2))
       R <- (R1 + R2) / 2
-      A_2 <- function(kappa) {besselI(x = kappa, nu = 1, expon.scaled = TRUE) /
-          besselI(x = kappa, nu = 0, expon.scaled = TRUE) - R}
+      A_2 <- function(kappa) besselI(x = kappa, nu = 1, expon.scaled = TRUE) /
+          besselI(x = kappa, nu = 0, expon.scaled = TRUE) - R
       kappa1 <- uniroot(A_2, lower = 1e-04, upper = 100, tol = 1e-04)$root
       kappa2 <- kappa1
       param <- c(mu1, mu2, kappa1, lambda)

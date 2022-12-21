@@ -15,9 +15,15 @@ r_bwc(n, mu, xi)
 
 fit_bwc_mm(x, hom = FALSE, indep = FALSE)
 
-fit_bwc_mle(x, start = NULL, lower = c(-pi, -pi, 0, 0, -1 + 0.001),
-  upper = c(pi, pi, 1 - 0.001, 1 - 0.001, 1 - 0.001), hom = FALSE,
-  indep = FALSE, ...)
+fit_bwc_mle(
+  x,
+  start = NULL,
+  lower = c(-pi, -pi, 0, 0, -1 + 0.001),
+  upper = c(pi, pi, 1 - 0.001, 1 - 0.001, 1 - 0.001),
+  hom = FALSE,
+  indep = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{matrix of size \code{c(nx, 2)} with the angles on which the density

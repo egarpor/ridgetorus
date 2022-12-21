@@ -362,20 +362,20 @@ test_that("BvM errors", {
 })
 
 test_that("BWN errors", {
-  
-  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = -1,subint_2 = 10, 
+
+  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = -1, subint_2 = 10,
                          Sigma = c(10, 2, 2, 5)))
-                         
-  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = -1,subint_2 = 10, 
+
+  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = -1, subint_2 = 10,
                          Sigma = matrix(data = c(10, 2, 2, 5, 0, 0), nrow = 3)
   ))
-  expect_error(ridge_bwn(mu = c(0, 0, 0), subint_1 = -1,subint_2 = 10, 
+  expect_error(ridge_bwn(mu = c(0, 0, 0), subint_1 = -1, subint_2 = 10,
                          Sigma = matrix(data = c(10, 2, 2, 5), nrow = 2)
   ))
-  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = -1,subint_2 = 10, 
+  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = -1, subint_2 = 10,
                          Sigma = matrix(data = c(10, 2, 2, 5), nrow = 2)))
-  
-  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = 100,subint_2 = -10, 
+
+  expect_error(ridge_bwn(mu = c(0, 0), subint_1 = 100, subint_2 = -10,
                          Sigma = matrix(data = c(10, 2, 2, 5), nrow = 2)))
 
 })

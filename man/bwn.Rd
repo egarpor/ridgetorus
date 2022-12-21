@@ -12,8 +12,13 @@ d_bwn(x, mu, Sigma, kmax = 2)
 
 r_bwn(n, mu, Sigma)
 
-fit_bwn_mle(x, kmax = 2, lower = c(-pi, -pi, 0.001, 0.001, -1),
-  upper = c(pi, pi, 20, 20, 1), ...)
+fit_bwn_mle(
+  x,
+  kmax = 2,
+  lower = c(-pi, -pi, 0.001, 0.001, -1),
+  upper = c(pi, pi, 20, 20, 1),
+  ...
+)
 }
 \arguments{
 \item{x}{matrix of size \code{c(nx, 2)} with the angles on which the density

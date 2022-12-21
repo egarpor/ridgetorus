@@ -8,21 +8,53 @@
 \alias{proj_ridge_curve}
 \title{Fourier-fitted ridge curve and related utilities}
 \usage{
-ridge_curve(theta, mu = c(0, 0), coefs = list(cos_a = c(0, 0), sin_b = 0),
-  ind_var = 1, at2 = TRUE)
+ridge_curve(
+  theta,
+  mu = c(0, 0),
+  coefs = list(cos_a = c(0, 0), sin_b = 0),
+  ind_var = 1,
+  at2 = TRUE
+)
 
-der_ridge_curve(theta, mu = c(0, 0), coefs = list(cos_a = c(0, 0), sin_b =
-  0), ind_var = 1, norm = NULL, at2 = TRUE)
+der_ridge_curve(
+  theta,
+  mu = c(0, 0),
+  coefs = list(cos_a = c(0, 0), sin_b = 0),
+  ind_var = 1,
+  norm = NULL,
+  at2 = TRUE
+)
 
-dist_ridge_curve(alpha, mu = c(0, 0), coefs = list(cos_a = c(0, 0), sin_b =
-  0), ind_var = 1, N = 500, der = TRUE, shortest = TRUE, at2 = TRUE)
+dist_ridge_curve(
+  alpha,
+  mu = c(0, 0),
+  coefs = list(cos_a = c(0, 0), sin_b = 0),
+  ind_var = 1,
+  N = 500,
+  der = TRUE,
+  shortest = TRUE,
+  at2 = TRUE
+)
 
-arclength_ridge_curve(mu = c(0, 0), coefs = list(cos_a = c(0, 0), sin_b =
-  0), ind_var = 1, N = 500, L = 500, at2 = TRUE)
+arclength_ridge_curve(
+  mu = c(0, 0),
+  coefs = list(cos_a = c(0, 0), sin_b = 0),
+  ind_var = 1,
+  N = 500,
+  L = 500,
+  at2 = TRUE
+)
 
-proj_ridge_curve(x, mu = c(0, 0), coefs = list(cos_a = c(0, 0), sin_b = 0),
-  ind_var = 1, N = 500, ridge_curve_grid = NULL, arclength = FALSE,
-  at2 = TRUE)
+proj_ridge_curve(
+  x,
+  mu = c(0, 0),
+  coefs = list(cos_a = c(0, 0), sin_b = 0),
+  ind_var = 1,
+  N = 500,
+  ridge_curve_grid = NULL,
+  arclength = FALSE,
+  at2 = TRUE
+)
 }
 \arguments{
 \item{theta}{vector \eqn{\theta} of size \code{nth}.}

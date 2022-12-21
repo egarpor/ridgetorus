@@ -69,4 +69,3 @@ test_that("max_score_2 gives maximal score", {
   i <- which.max(torus_dist(x = th, y = projs2))
 
 })
-

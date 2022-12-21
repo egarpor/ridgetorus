@@ -4,9 +4,18 @@
 \alias{show_ridge_pca}
 \title{Illustration of toroidal PCA via density ridges}
 \usage{
-show_ridge_pca(fit, n_max = 500, projs = TRUE, projs_lines = TRUE,
-  signs = TRUE, col_data = 1, col_projs = c(3, 4), main = "",
-  N = 500, at2 = TRUE)
+show_ridge_pca(
+  fit,
+  n_max = 500,
+  projs = TRUE,
+  projs_lines = TRUE,
+  signs = TRUE,
+  col_data = 1,
+  col_projs = c(3, 4),
+  main = "",
+  N = 500,
+  at2 = TRUE
+)
 }
 \arguments{
 \item{fit}{the output of \code{\link{ridge_pca}}.}

@@ -4,8 +4,15 @@
 \alias{torus_pairs}
 \title{Toroidal pairs plot}
 \usage{
-torus_pairs(x, max_dim = 10, columns = NULL, col_data = 1,
-  ylim_dens = c(0, 1.5), bwd = "ROT", scales = c(pi, pi))
+torus_pairs(
+  x,
+  max_dim = 10,
+  columns = NULL,
+  col_data = 1,
+  ylim_dens = c(0, 1.5),
+  bwd = "ROT",
+  scales = c(pi, pi)
+)
 }
 \arguments{
 \item{x}{a matrix of size \code{c(nx, d)} with angles on \eqn{[-\pi, \pi)}.}

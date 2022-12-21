@@ -4,8 +4,17 @@
 \alias{ridge_pca}
 \title{Toroidal PCA via density ridges}
 \usage{
-ridge_pca(x, type = c("auto", "bvm", "bwc")[1], N = 500, K = 15,
-  scale = TRUE, lrts = TRUE, alpha = 0.05, at2 = TRUE, ...)
+ridge_pca(
+  x,
+  type = c("auto", "bvm", "bwc")[1],
+  N = 500,
+  K = 15,
+  scale = TRUE,
+  lrts = TRUE,
+  alpha = 0.05,
+  at2 = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{matrix of dimension  \code{c(n, 2)} containing the \code{n}
@@ -59,4 +68,35 @@ via density ridges on a given sample: parameter estimation of the
 underlying distribution, estimation of the connected component of the ridge,
 and determination of its Fourier expansion from which to obtain the first
 and second scores.
+}
+\examples{
+## Bivariate von Mises
+
+n <- 50
+x <- r_bvm(n = n, mu = c(1, 2), kappa = c(0.4, 0.4, 0.5))
+fit <- ridge_pca(x = x, type = "bvm")
+show_ridge_pca(fit = fit, col_data = "red")
+
+\dontrun{
+x <- r_bvm(n = n, mu = c(2, 1), kappa = c(1, 2, 0))
+fit <- ridge_pca(x = x, type = "bvm")
+show_ridge_pca(fit = fit, col_data = "red")
+
+x <- r_bvm(n = n, mu = c(2, 1), kappa = c(3, 2, 0))
+fit <- ridge_pca(x = x, type = "bvm")
+show_ridge_pca(fit = fit, col_data = "red")
+
+## Bivariate wrapped Cauchy
+
+x <- r_bwc(n = n, mu = c(1, 2), xi = c(0.2, 0.2, 0.5))
+fit <- ridge_pca(x = x, type = "bwc")
+show_ridge_pca(fit = fit, col_data = "red")
+
+x <- r_bwc(n = n, mu = c(1, 2), xi = c(0.2, 0.8, 0))
+fit <- ridge_pca(x = x, type = "bwc")
+show_ridge_pca(fit = fit, col_data = "red")
+
+x <- r_bwc(n = n, mu = c(1, 2), xi = c(0.5, 0.2, 0))
+fit <- ridge_pca(x = x, type = "bwc")
+show_ridge_pca(fit = fit, col_data = "red")}
 }

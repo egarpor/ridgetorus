@@ -16,11 +16,27 @@ const_bvm(kappa, M = 25, MC = 10000)
 
 r_bvm(n, mu, kappa)
 
-fit_bvm_mm(x, lower = c(0, 0, -30), upper = c(30, 30, 30), start = NULL,
-  M = 25, hom = FALSE, indep = FALSE, ...)
+fit_bvm_mm(
+  x,
+  lower = c(0, 0, -30),
+  upper = c(30, 30, 30),
+  start = NULL,
+  M = 25,
+  hom = FALSE,
+  indep = FALSE,
+  ...
+)
 
-fit_bvm_mle(x, start = NULL, M = 25, lower = c(-pi, -pi, 0, 0, -30),
-  upper = c(pi, pi, 30, 30, 30), hom = FALSE, indep = FALSE, ...)
+fit_bvm_mle(
+  x,
+  start = NULL,
+  M = 25,
+  lower = c(-pi, -pi, 0, 0, -30),
+  upper = c(pi, pi, 30, 30, 30),
+  hom = FALSE,
+  indep = FALSE,
+  ...
+)
 }
 \arguments{
 \item{x}{matrix of size \code{c(nx, 2)} with the angles on which the density

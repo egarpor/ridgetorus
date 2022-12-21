@@ -183,10 +183,9 @@ test_that("Homogeneity and independence for bvm under H1", {
 
 })
 
-
 test_that("LRT error", {
 
-  expect_error(biv_lrt(x = r_bwc(n = n_1, mu = mu, xi = xi_15), hom = FALSE, 
+  expect_error(biv_lrt(x = r_bwc(n = n_1, mu = mu, xi = xi_15), hom = FALSE,
                        indep = FALSE))
 
 })
@@ -201,4 +200,3 @@ test_that("Homogeneity and independence for bwc under H1", {
   expect_true(mean(p12) < 0.30)
 
 })
-
