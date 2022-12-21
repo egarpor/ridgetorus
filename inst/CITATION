@@ -1,0 +1,19 @@
+
+year <- sub("-.*", "", meta$Date)
+note <- paste("R package version", meta$Version)
+
+citHeader("To cite ridgetorus in publications use:")
+
+citEntry(entry = "Manual",
+  title        = "{ridgetorus}: {PCA} on the Torus via Density Ridges",
+  author       = personList(as.person("Eduardo García-Portugués"),
+                   as.person("Arturo Prieto-Tirado")),
+  year = year,
+  note = note,
+  url = "https://github.com/egarpor/ridgetorus",
+  textVersion  =
+  paste(paste0("García-Portugués, E. and Prieto-Tirado, A. (", year, ")."),
+        "ridgetorus: {PCA} on the Torus via Density Ridges.",
+        paste0("R package version ", meta$Version, "."),
+        "https://github.com/egarpor/ridgetorus")
+)

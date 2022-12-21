@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README$
+^README.*$
+^TODO$
+^data-raw$
+^application$
+^experiments$
+^videos$
+^CRAN-RELEASE$
+^cran-comments\.md$
+^LICENSE\.md$
+TODO.md
+pkg-devtools.R
+^\.github$

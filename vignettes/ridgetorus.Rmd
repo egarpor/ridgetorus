@@ -1,0 +1,82 @@
+---
+title: "`ridgetorus`: PCA on the Torus via Density Ridges"
+author: "Eduardo García-Portugués and Arturo Prieto-Tirado"
+date: "`r Sys.Date()`, v`r packageVersion('ridgetorus')`"
+bibliography: ridgetorus.bib
+biblio-style: apalike-custom
+output:
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{ridgetorus: PCA on the Torus via Density Ridges}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+options(rmarkdown.html_vignette.check_title = FALSE)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+In a wide spectrum of applied fields, data is present as multivariate circular data (toroidal data), rendering spurious the application of many standard statistical tools. The package `ridgetorus` implements Toroidal Ridge PCA (TR-PCA), an alternative to PCA suited to toroidal data  [@Garcia-Portugues2022]. Below are some simple examples of the use of TR-PCA through `ridge_pca()`, the main function in `ridgetorus`.
+
+## Texan wind
+
+The following example illustrates the application of TR-PCA to a small dataset comprised by wind directions measured at 6:00 and 7:00 from June 1, 2003 to June 30, 2003 at a weather station in Texas. The direction is measured in radians in $[-\pi, \pi)$ with $-\pi/-\frac{\pi}{2}/0/\frac{\pi}{2}/\pi$ representing the East/South/West/North/East directions.
+
+```{r wind-1}
+library(ridgetorus)
+data("wind")
+plot(wind, xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE,
+     xlab = expression(theta[1]), ylab = expression(theta[2]))
+sdetorus::torusAxis()
+```
+
+TR-PCA works by first modeling the data with the best-fitting model among a Bivariate Wrapped Cauchy [@Kato2015a] and a Bivariate Sine von Mises [@Singh2002]. Then, the density ridge (see @Genovese2014) is computed and its connected component through the mode(s) of the distribution is extracted. In this case, this connected component explains $62\%$ of the variance of the original data. The plot below shows how the scores are computed, and how their signs are assigned. The blue asterisk stands for the Fréchet mean of the sample through TR-PCA.
+
+```{r wind-2}
+# Fit TR-PCA
+fit <- ridge_pca(x = wind)
+show_ridge_pca(fit)
+
+# Variance explained
+fit$var_exp
+```
+
+The produced scores allow the identification of outliers and "rectify" the original sample.
+
+```{r}
+plot(fit$scores, xlim = c(-pi, pi), ylim = c(-pi, pi), pch = 16, axes = FALSE,
+     xlab = "Scores 1", ylab = "Scores 2")
+sdetorus::torusAxis()
+```
+
+## Japanese earthquakes
+
+The following dataset represents pre-earthquake direction of steepest descent and the direction of lateral ground movement after an earthquake in Noshiro, Japan. We use TR-PCA to unveil the behavior and explain the variability of the earthquake phenomena.
+
+```{r earthquakes-1}
+data("earthquakes")
+earthquakes <- sdetorus::toPiInt(earthquakes)
+plot(earthquakes, xlim = c(-pi, pi), ylim = c(-pi, pi),
+     xlab = expression(theta[1]), ylab = expression(theta[2]), axes = FALSE)
+sdetorus::torusAxis()
+```
+
+The dataset is modeled with the best-fitting model among a Bivariate Wrapped Cauchy and a Bivariate Sine von Mises. Once the distribution is determined, the connected component of the density ridge can be computed. This flexible first principal component explains $66\%$ of the variance and shows a clear linear trend between both studied angles.
+
+```{r earthquakes-2}
+fit_earthquakes <- ridge_pca(x = earthquakes)
+fit_earthquakes$var_exp
+show_ridge_pca(fit_earthquakes)
+plot(fit_earthquakes$scores, pch = 16, xlim = c(-pi, pi), axes = FALSE,
+     ylim = c(-pi, pi), xlab = "Scores 1", ylab = "Scores 2")
+sdetorus::torusAxis()
+```
+
+## References
+
