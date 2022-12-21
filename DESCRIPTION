@@ -30,6 +30,7 @@ Imports:
     circular
 Suggests:
     BAMBI,
+    covr,
     DirStats,
     GGally,
     ggplot2,

@@ -6,6 +6,7 @@ GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org
 status](https://github.com/egarpor/ridgetorus/workflows/R-CMD-check/badge.svg)](https://github.com/egarpor/ridgetorus/actions)
 [![R build
 status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)](https://github.com/egarpor/ridgetorus/actions)
+[![](https://app.codecov.io/gh/egarpor/ridgetorus/branch/main/graph/badge.svg)](https://app.codecov.io/gh/egarpor/ridgetorus)
 [![](https://www.r-pkg.org/badges/version/ridgetorus?color=green)](https://cran.r-project.org/package=ridgetorus)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
 [![](http://cranlogs.r-pkg.org/badges/last-month/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
