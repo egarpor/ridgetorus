@@ -14,3 +14,4 @@ TODO.md
 pkg-devtools.R
 ^\.github$
 ^codecov\.yml$
+^CRAN-SUBMISSION$

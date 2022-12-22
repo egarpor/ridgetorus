@@ -29,7 +29,6 @@
 #' \code{max_score_2} computes the maximum allowed second score to rescale if
 #' \code{scale = TRUE}.
 #' @examples
-#' \dontrun{
 #' mu <- c(-0.5, 1.65)
 #' th <- seq(-pi, pi, l = 200)
 #' K <- 5
@@ -83,7 +82,7 @@
 #'   points(0, 0, pch = "*", cex = 3)
 #'
 #' }
-#' par(old_par)}
+#' par(old_par)
 #' @export
 ridge_scores <- function(x, mu = c(0, 0), coefs =
                            list(cos_a = c(0, 0), sin_b = 0),

@@ -70,14 +70,14 @@ and determination of its Fourier expansion from which to obtain the first
 and second scores.
 }
 \examples{
+\dontrun{
 ## Bivariate von Mises
 
-n <- 50
+n <- 100
 x <- r_bvm(n = n, mu = c(1, 2), kappa = c(0.4, 0.4, 0.5))
 fit <- ridge_pca(x = x, type = "bvm")
 show_ridge_pca(fit = fit, col_data = "red")
 
-\dontrun{
 x <- r_bvm(n = n, mu = c(2, 1), kappa = c(1, 2, 0))
 fit <- ridge_pca(x = x, type = "bvm")
 show_ridge_pca(fit = fit, col_data = "red")
