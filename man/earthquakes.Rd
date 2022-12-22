@@ -34,7 +34,7 @@ plot(earthquakes, xlab = expression(theta[1]), ylab = expression(theta[2]),
      xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE)
 sdetorus::torusAxis()
 
-\dontrun{
+\donttest{
 # Perform TR-PCA
 fit <- ridge_pca(x = earthquakes)
 show_ridge_pca(fit)}

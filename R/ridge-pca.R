@@ -35,7 +35,7 @@
 #' \item{p_hom}{\eqn{p}-value of the homogeneity test.}
 #' \item{p_indep}{\eqn{p}-value of the independence test.}
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' ## Bivariate von Mises
 #'
 #' n <- 100

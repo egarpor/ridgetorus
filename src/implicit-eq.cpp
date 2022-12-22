@@ -41,7 +41,7 @@ Rcpp::List grad_hess_mwn(arma::mat theta, arma::vec mu, arma::mat Sigma,
 //'     theta2 = x, theta1 = th1, density = "bvm", kappa = kappa[1:2],
 //'     Lambda = matrix(c(0, kappa[3], kappa[3], 0), nrow = 2, ncol = 2)))
 //' val <- matrix(val, nrow = n, ncol = n)
-//' old_par <- par()
+//' old_par <- par(no.readonly = TRUE)
 //' par(mfrow = c(1, 2))
 //' image(x, x, -log(abs(val)), axes = FALSE, col = viridisLite::viridis(20))
 //' sdetorus::torusAxis()

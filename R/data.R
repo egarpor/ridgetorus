@@ -40,7 +40,7 @@
 #' data("santabarbara")
 #' AB_zone <- santabarbara[c("A","B")]
 #'
-#' \dontrun{
+#' \donttest{
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = AB_zone)
 #' show_ridge_pca(fit)}
@@ -85,7 +85,7 @@
 #'      xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE)
 #' sdetorus::torusAxis()
 #'
-#' \dontrun{
+#' \donttest{
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = earthquakes)
 #' show_ridge_pca(fit)}
@@ -119,7 +119,7 @@
 #'      xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE)
 #' sdetorus::torusAxis()
 #'
-#' \dontrun{
+#' \donttest{
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = wind)
 #' show_ridge_pca(fit)}

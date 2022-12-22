@@ -45,7 +45,7 @@
 #'
 #' # Torus pairs
 #' torus_pairs(x, col_data = col)
-#' \dontrun{
+#' \donttest{
 #' fit <- ridge_pca(x = x)
 #' torus_pairs(fit$scores, col_data = col)}
 #' @export
@@ -200,7 +200,7 @@ torus_pairs <- function(x, max_dim = 10, columns = NULL, col_data = 1,
 #' @inheritParams ridge_fourier_fit
 #' @return Nothing, the functions are called to produce plots.
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Generate data
 #' set.seed(987654321)
 #' n <- 50

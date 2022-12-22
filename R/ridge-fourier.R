@@ -17,7 +17,7 @@
 #' \item{cos_a}{contains \eqn{a_0,a_1,\ldots,a_m}.}
 #' \item{sin_b}{contains \eqn{b_1,\ldots,b_m}.}
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Zero mean
 #' ridge0 <- ridge_bvm(mu = c(0, 0), kappa = c(1, 2, -5), subint_1 = 5e2,
 #'                     subint_2 = 5e2)

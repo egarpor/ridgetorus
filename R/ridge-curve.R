@@ -107,12 +107,6 @@
 #' dist_ridge_curve(alpha = a, mu = mu, coefs = coefs, der = TRUE, N = 1e2)
 #' dist_ridge_curve(alpha = a, mu = mu, coefs = coefs, der = FALSE, N = 1e2)
 #'
-#' # # Distances - with derivatives is faster, though slightly less precise
-#' # microbenchmark::microbenchmark(
-#' #   dist_ridge_curve(alpha = a, mu = mu, coefs = coefs, der = TRUE),
-#' #   dist_ridge_curve(alpha = a, mu = mu, coefs = coefs, der = FALSE)
-#' # )
-#'
 #' ## arclength_ridge_curve
 #'
 #' mu <- c(-pi / 2, pi / 2)
@@ -135,7 +129,7 @@
 #' x <- matrix(runif(2 * n, -pi, pi), nrow = n, ncol = 2)
 #' col <- rainbow(n)
 #' th <- seq(-pi, pi, l = 100)
-#' old_par <- par()
+#' old_par <- par(no.readonly = TRUE)
 #' par(mfrow = c(1, 2))
 #' for (j in 1:2) {
 #'

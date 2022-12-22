@@ -258,7 +258,7 @@ filtering <- function(solution, quadrant, max_dist = 0.1) {
 #' surfaces. \emph{Journal of Machine Learning Research}, 12(34):1249--1286.
 #' \doi{10.6083/M4ZG6Q60}
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' # Bivariate von Mises
 #' mu <- c(0, 0)
 #' kappa <- c(0.3, 0.5, 0.4)

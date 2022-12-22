@@ -85,7 +85,7 @@ n <- 10
 col <- rainbow(n)
 
 set.seed(13213)
-old_par <- par()
+old_par <- par(no.readonly = TRUE)
 par(mfrow = c(2, 2))
 for (j in 1:2) {
 

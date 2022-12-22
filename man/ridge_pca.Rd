@@ -70,7 +70,7 @@ and determination of its Fourier expansion from which to obtain the first
 and second scores.
 }
 \examples{
-\dontrun{
+\donttest{
 ## Bivariate von Mises
 
 n <- 100

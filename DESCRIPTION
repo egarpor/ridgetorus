@@ -10,14 +10,13 @@ Authors@R: c(
     person(given = "Arturo", family = "Prieto-Tirado", role = "aut",
     comment = c(ORCID = "0000-0003-0193-2988"))
     )
-Description: Implementation of a principal component analysis in the 
-    two-dimensional torus via density ridge estimation. The main function,
-    ridge_pca(), obtains the relevant density ridge for bivariate sine
-    von Mises and bivariate wrapped Cauchy distribution models and provides
-    the associated scores and variance decomposition. Auxiliary functions
-    for evaluating, fitting, and sampling these models are also provided. The
-    package provides replicability to García-Portugués and Prieto-Tirado
-    (2022) <arXiv:2212.10856>.
+Description: Implementation of a Principal Component Analysis (PCA) in the
+    torus via density ridge estimation. The main function, ridge_pca(), obtains
+    the relevant density ridge for bivariate sine von Mises and bivariate
+    wrapped Cauchy distribution models and provides the associated scores and
+    variance decomposition. Auxiliary functions for evaluating, fitting, and
+    sampling these models are also provided. The package provides replicability
+    to García-Portugués and Prieto-Tirado (2022) <arXiv:2212.10856>.
 License: GPL-3
 LazyData: true
 Depends:

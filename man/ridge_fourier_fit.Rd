@@ -31,7 +31,7 @@ Computation of the Fourier expansion coefficients of a
 given curve.
 }
 \examples{
-\dontrun{
+\donttest{
 # Zero mean
 ridge0 <- ridge_bvm(mu = c(0, 0), kappa = c(1, 2, -5), subint_1 = 5e2,
                     subint_2 = 5e2)

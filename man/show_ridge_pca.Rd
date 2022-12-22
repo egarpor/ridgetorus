@@ -53,7 +53,7 @@ Shows the scores computation for PCA via density ridges on
 \eqn{[-\pi, \pi)^2}.
 }
 \examples{
-\dontrun{
+\donttest{
 # Generate data
 set.seed(987654321)
 n <- 50

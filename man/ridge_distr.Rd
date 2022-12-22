@@ -45,7 +45,7 @@ in a given set of points or, if not specified, in a regular grid on
 \eqn{[-\pi, \pi)}.
 }
 \examples{
-\dontrun{
+\donttest{
 # Bivariate von Mises
 mu <- c(0, 0)
 kappa <- c(0.3, 0.5, 0.4)

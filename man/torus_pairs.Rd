@@ -66,7 +66,7 @@ col <- rainbow(3)[rep(1:3, each = n)]
 
 # Torus pairs
 torus_pairs(x, col_data = col)
-\dontrun{
+\donttest{
 fit <- ridge_pca(x = x)
 torus_pairs(fit$scores, col_data = col)}
 }

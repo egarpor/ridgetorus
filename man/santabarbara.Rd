@@ -40,7 +40,7 @@ preprocessing is available at
 data("santabarbara")
 AB_zone <- santabarbara[c("A","B")]
 
-\dontrun{
+\donttest{
 # Perform TR-PCA
 fit <- ridge_pca(x = AB_zone)
 show_ridge_pca(fit)}
