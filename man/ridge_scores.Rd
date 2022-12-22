@@ -77,6 +77,7 @@ is the maximal absolute second score.
 The mean \eqn{\mu} corresponds to the first score being null.
 }
 \examples{
+\dontrun{
 mu <- c(-0.5, 1.65)
 th <- seq(-pi, pi, l = 200)
 K <- 5
@@ -130,5 +131,5 @@ for (j in 1:2) {
   points(0, 0, pch = "*", cex = 3)
 
 }
-par(old_par)
+par(old_par)}
 }

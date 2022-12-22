@@ -31,6 +31,7 @@ Computation of the Fourier expansion coefficients of a
 given curve.
 }
 \examples{
+\dontrun{
 # Zero mean
 ridge0 <- ridge_bvm(mu = c(0, 0), kappa = c(1, 2, -5), subint_1 = 5e2,
                     subint_2 = 5e2)
@@ -62,5 +63,5 @@ ridge <- ridge_bwc(mu = mu, xi = c(0.8, 0.1, 0.75), subint_1 = 5e2,
                    subint_2 = 5e2)
 plot(ridge, xlim = c(-pi, pi), ylim = c(-pi, pi))
 coefs <- ridge_fourier_fit(ridge)
-points(ridge_curve(th, mu = mu, coefs = coefs), col = 4, cex = 0.5)
+points(ridge_curve(th, mu = mu, coefs = coefs), col = 4, cex = 0.5)}
 }
