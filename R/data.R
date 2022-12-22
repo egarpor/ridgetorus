@@ -111,7 +111,7 @@
 #' Johnson, R. A. and Wehrly, T. (1977). Measures and models for angular
 #' correlation and angular-linear correlation. \emph{Journal of the Royal
 #' Statistical Society. Series B (Methodological)}, 39(2):222--229.
-#' \url{http://www.jstor.org/stable/2984799}
+#' \url{https://www.jstor.org/stable/2984799}
 #' @examples
 #' # Load data
 #' data("wind")

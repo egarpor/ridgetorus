@@ -26,4 +26,3 @@
 * This is a new release.
 * NOTE "Possibly misspelled words in DESCRIPTION" has been double checked -- words are correct.
 * NOTE "Found the following (possibly) invalid URLs" has been double checked -- URLs are correct.
-* Sometimes the examples in ridge_pca() takes slightly more than 10s (like 11s). But this is the main function of the package, so it is useful to have at least one example without \dontrun. The running times on the other functions have been trimmed down to make up for this.
