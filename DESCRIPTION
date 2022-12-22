@@ -17,7 +17,7 @@ Description: Implementation of a principal component analysis in the
     the associated scores and variance decomposition. Auxiliary functions
     for evaluating, fitting, and sampling these models are also provided. The
     package provides replicability to García-Portugués and Prieto-Tirado
-    (2022) <arXiv:2212.XXXXX>.
+    (2022) <arXiv:2212.10856>.
 License: GPL-3
 LazyData: true
 Depends:

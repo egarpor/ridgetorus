@@ -40,11 +40,10 @@ preprocessing is available at
 data("santabarbara")
 AB_zone <- santabarbara[c("A","B")]
 
+\dontrun{
 # Perform TR-PCA
 fit <- ridge_pca(x = AB_zone)
-
-# Plot results
-show_ridge_pca(fit)
+show_ridge_pca(fit)}
 }
 \references{
 Auad, G., Hendershott, M. C., and Winant, C. D. (1998). Wind-induced currents
@@ -53,6 +52,6 @@ Physical Oceanography}, 28(1):85--102.
 \doi{10.1175/1520-0485(1998)028<0085:WICABT>2.0.CO;2}
 
 García-Portugués, E. and Prieto-Tirado, A. (2022). Toroidal PCA via density
-ridges. \emph{arXiv:2212.XXXXX}. \url{https://arxiv.org/abs/2212.XXXXX}
+ridges. \emph{arXiv:2212.10856}. \url{https://arxiv.org/abs/2212.10856}
 }
 \keyword{datasets}

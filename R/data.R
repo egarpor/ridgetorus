@@ -34,17 +34,16 @@
 #' \doi{10.1175/1520-0485(1998)028<0085:WICABT>2.0.CO;2}
 #'
 #' García-Portugués, E. and Prieto-Tirado, A. (2022). Toroidal PCA via density
-#' ridges. \emph{arXiv:2212.XXXXX}. \url{https://arxiv.org/abs/2212.XXXXX}
+#' ridges. \emph{arXiv:2212.10856}. \url{https://arxiv.org/abs/2212.10856}
 #' @examples
 #' # Load data
 #' data("santabarbara")
 #' AB_zone <- santabarbara[c("A","B")]
 #'
+#' \dontrun{
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = AB_zone)
-#'
-#' # Plot results
-#' show_ridge_pca(fit)
+#' show_ridge_pca(fit)}
 "santabarbara"
 
 
@@ -86,11 +85,10 @@
 #'      xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE)
 #' sdetorus::torusAxis()
 #'
+#' \dontrun{
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = earthquakes)
-#'
-#' # Plot results
-#' show_ridge_pca(fit)
+#' show_ridge_pca(fit)}
 "earthquakes"
 
 
@@ -120,8 +118,9 @@
 #' plot(wind, xlab = expression(theta[1]), ylab = expression(theta[2]),
 #'      xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE)
 #' sdetorus::torusAxis()
-#' fit <- ridge_pca(x = wind)
 #'
-#' # Plot results
-#' show_ridge_pca(fit)
+#' \dontrun{
+#' # Perform TR-PCA
+#' fit <- ridge_pca(x = wind)
+#' show_ridge_pca(fit)}
 "wind"

@@ -17,8 +17,7 @@
 #' Either \code{"ROT"}, \code{"EMI"}, \code{"AMI"}, \code{"LSCV"}, or
 #' \code{"LCV"}. See \code{\link[DirStats:bw_dir_pi]{bw_dir_pi}} and
 #' \code{\link[DirStats:bw_dir_pi]{bw_dir_cv}}. Defaults to \code{"ROT"}.
-#' @param scales scale the limits to the \eqn{[-\pi, \pi)} interval (default)
-#' or any other.
+#' @param scales scales of the torus. Defaults to \code{rep(pi, ncol(x))}.
 #' @details
 #' The default bandwidth selector is the Rule-Of-Thumb (ROT) selector in
 #' García-Portugués (2013). It is fast, yet it may oversmooth non-unimodal
@@ -46,15 +45,13 @@
 #'
 #' # Torus pairs
 #' torus_pairs(x, col_data = col)
-#' fit_s <- ridge_pca(x = x, scale = TRUE)
-#' torus_pairs(fit_s$scores, col_data = col, scales = fit_s$scales)
 #' \dontrun{
-#' fit_u <- ridge_pca(x = x, scale = FALSE)
-#' torus_pairs(fit_u$scores, col_data = col, scales = fit_u$scales)}
+#' fit <- ridge_pca(x = x)
+#' torus_pairs(fit$scores, col_data = col)}
 #' @export
 torus_pairs <- function(x, max_dim = 10, columns = NULL, col_data = 1,
                         ylim_dens = c(0, 1.5), bwd = "ROT",
-                        scales = c(pi, pi)) {
+                        scales = rep(pi, ncol(x))) {
 
   #Necessary variables
   d <- ncol(x)

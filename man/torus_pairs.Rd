@@ -11,7 +11,7 @@ torus_pairs(
   col_data = 1,
   ylim_dens = c(0, 1.5),
   bwd = "ROT",
-  scales = c(pi, pi)
+  scales = rep(pi, ncol(x))
 )
 }
 \arguments{
@@ -33,8 +33,7 @@ Either \code{"ROT"}, \code{"EMI"}, \code{"AMI"}, \code{"LSCV"}, or
 \code{"LCV"}. See \code{\link[DirStats:bw_dir_pi]{bw_dir_pi}} and
 \code{\link[DirStats:bw_dir_pi]{bw_dir_cv}}. Defaults to \code{"ROT"}.}
 
-\item{scales}{scale the limits to the \eqn{[-\pi, \pi)} interval (default)
-or any other.}
+\item{scales}{scales of the torus. Defaults to \code{rep(pi, ncol(x))}.}
 }
 \value{
 A \code{\link[ggplot2:ggplot2]{ggplot}}. The density plots show the
@@ -67,11 +66,9 @@ col <- rainbow(3)[rep(1:3, each = n)]
 
 # Torus pairs
 torus_pairs(x, col_data = col)
-fit_s <- ridge_pca(x = x, scale = TRUE)
-torus_pairs(fit_s$scores, col_data = col, scales = fit_s$scales)
 \dontrun{
-fit_u <- ridge_pca(x = x, scale = FALSE)
-torus_pairs(fit_u$scores, col_data = col, scales = fit_u$scales)}
+fit <- ridge_pca(x = x)
+torus_pairs(fit$scores, col_data = col)}
 }
 \references{
 García-Portugués, E. (2013). Exact risk improvement of bandwidth selectors

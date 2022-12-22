@@ -13,11 +13,11 @@ von Mises and bivariate wrapped Cauchy distribution models and provides
 the associated scores and variance decomposition. Auxiliary functions
 for evaluating, fitting, and sampling these models are also provided. The
 package provides replicability to García-Portugués and Prieto-Tirado
-(2022) <arXiv:2212.XXXXX>.
+(2022) <arXiv:2212.10856>.
 }
 \references{
 García-Portugués, E. and Prieto-Tirado, A. (2022). Toroidal PCA via density
-ridges. \emph{arXiv:2212.XXXXX}. \url{https://arxiv.org/abs/2212.XXXXX}
+ridges. \emph{arXiv:2212.10856}. \url{https://arxiv.org/abs/2212.10856}
 }
 \author{
 Eduardo García-Portugués and Arturo Prieto-Tirado.

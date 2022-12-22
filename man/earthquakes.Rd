@@ -34,11 +34,10 @@ plot(earthquakes, xlab = expression(theta[1]), ylab = expression(theta[2]),
      xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE)
 sdetorus::torusAxis()
 
+\dontrun{
 # Perform TR-PCA
 fit <- ridge_pca(x = earthquakes)
-
-# Plot results
-show_ridge_pca(fit)
+show_ridge_pca(fit)}
 }
 \references{
 Hamada, M. and O'Rourke, T. (1992). Case Studies of Liquefaction & Lifeline

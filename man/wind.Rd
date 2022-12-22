@@ -29,10 +29,11 @@ data("wind")
 plot(wind, xlab = expression(theta[1]), ylab = expression(theta[2]),
      xlim = c(-pi, pi), ylim = c(-pi, pi), axes = FALSE)
 sdetorus::torusAxis()
-fit <- ridge_pca(x = wind)
 
-# Plot results
-show_ridge_pca(fit)
+\dontrun{
+# Perform TR-PCA
+fit <- ridge_pca(x = wind)
+show_ridge_pca(fit)}
 }
 \references{
 Johnson, R. A. and Wehrly, T. (1977). Measures and models for angular
