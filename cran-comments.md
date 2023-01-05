@@ -23,6 +23,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This is a new release.
-* NOTE "Possibly misspelled words in DESCRIPTION" has been double checked -- words are correct.
-* NOTE "Found the following (possibly) invalid URLs" has been double checked -- URLs are correct.
+* Attempt to fix the additional issues signaled on https://www.stats.ox.ac.uk/pub/bdr/memtests/gcc-UBSAN/ridgetorus/ and affecting  implicit-eq.cpp:73, implicit-eq.cpp:74, implicit-eq.cpp:82, implicit-eq.cpp:89 due to lack of initialization of variables?
