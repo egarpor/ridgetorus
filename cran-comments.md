@@ -23,4 +23,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-* Fixes the additional issues signaled on https://www.stats.ox.ac.uk/pub/bdr/memtests/gcc-UBSAN/ridgetorus/
+* Fixes the additional issues signaled on https://www.stats.ox.ac.uk/pub/bdr/memtests/gcc-UBSAN/ridgetorus/.
