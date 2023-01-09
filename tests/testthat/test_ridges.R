@@ -325,6 +325,7 @@ test_that("Implicit is 0", {
 })
 
 # Errors and warnings tests
+
 test_that("BWC errors", {
 
   expect_error(ridge_bwc(mu = c(0, 0), xi = c(0.3, 0.4, 0.5), subint_1 = -1,

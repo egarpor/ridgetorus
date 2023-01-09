@@ -59,6 +59,13 @@ arma::vec implicit_equation(arma::vec theta2, double theta1, String density,
                             Rcpp::Nullable<NumericMatrix> Sigma = R_NilValue,
                             Rcpp::Nullable<NumericMatrix> k = R_NilValue) {
 
+  // Stop if theta2 is empty
+  if (theta2.n_elem == 0) {
+
+    Rcpp::stop("theta2 is empty");
+
+  }
+
   // Needed declarations
   Rcpp::List gradhess;
   arma::vec D1 = arma::zeros(theta2.n_elem);

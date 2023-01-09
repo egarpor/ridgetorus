@@ -23,4 +23,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This is an attempt to fix the additional issues signaled on https://www.stats.ox.ac.uk/pub/bdr/memtests/gcc-UBSAN/ridgetorus/ and affecting  implicit-eq.cpp:73, implicit-eq.cpp:74, implicit-eq.cpp:82, implicit-eq.cpp:89, possibly due to lack of initialization of variables. I have been not able to set up a local environment to reproduce the additional tests.
+* Fixes the additional issues signaled on https://www.stats.ox.ac.uk/pub/bdr/memtests/gcc-UBSAN/ridgetorus/

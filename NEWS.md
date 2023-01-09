@@ -4,4 +4,4 @@
 
 # ridgetorus 1.0.1
 
-* Address UBSAN additional issues.
+* Fix UBSAN additional issues generated when implicit_eq() was called with an empty argument theta2.
