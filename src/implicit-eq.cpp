@@ -35,7 +35,7 @@ Rcpp::List grad_hess_mwn(arma::mat theta, arma::vec mu, arma::mat Sigma,
 //' @examples
 //' n <- 200
 //' x <- seq(-pi, pi, l = n)
-//' mu = c(0, 0)
+//' mu <- c(0, 0)
 //' kappa <- c(0.3, 0.4, 0.5)
 //' val <- sapply(x, function(th1) ridgetorus:::implicit_equation(
 //'     theta2 = x, theta1 = th1, density = "bvm", kappa = kappa[1:2],
@@ -59,19 +59,26 @@ arma::vec implicit_equation(arma::vec theta2, double theta1, String density,
                             Rcpp::Nullable<NumericMatrix> Sigma = R_NilValue,
                             Rcpp::Nullable<NumericMatrix> k = R_NilValue) {
 
+  // Stop if theta2 is empty
+  if (theta2.n_elem == 0) {
+
+    Rcpp::stop("theta2 is empty");
+
+  }
+
   // Needed declarations
   Rcpp::List gradhess;
-  arma::vec D1;
-  arma::vec D2;
-  arma::vec u;
-  arma::vec v;
-  arma::vec w;
+  arma::vec D1 = arma::zeros(theta2.n_elem);
+  arma::vec D2 = arma::zeros(theta2.n_elem);
+  arma::vec u = arma::zeros(theta2.n_elem);
+  arma::vec v = arma::zeros(theta2.n_elem);
+  arma::vec w = arma::zeros(theta2.n_elem);
 
   if (density == "bvm" || density == "bwn") { // Valid for multivariate
 
-    arma::mat theta(theta2.n_elem, 2);
-    theta.col(1) = theta2;
+    arma::mat theta = arma::zeros(theta2.n_elem, 2);
     theta.col(0).fill(theta1);
+    theta.col(1) = theta2;
     if (density == "bvm") {
 
       gradhess = grad_hess_mvm(theta, kappa,

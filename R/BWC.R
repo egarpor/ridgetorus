@@ -100,11 +100,15 @@ r_bwc <- function(n, mu, xi) {
   U2 <- tmp[, 1]
   C2 <- exp(1i * 2 * pi * U2)
   if (rho < 0) {
+
     alpha2 <- (phi * xi2 * C1 + 1) / (phi * xi2 * C1inv + 1)
     beta2 <- (xi2 + phi * C1inv) / (phi * xi2 * C1 + 1)
+
   } else if (rho >= 0) {
+
     alpha2 <- (phi * xi2 * C1inv + 1) / (phi * xi2 * C1 + 1)
     beta2 <- (xi2 + phi * C1) / (phi * xi2 * C1inv + 1)
+
   }
   Z2 <- alpha2 * (C2 + beta2) / (Conj(beta2) * C2 + 1)
 
