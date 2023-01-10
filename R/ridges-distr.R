@@ -384,7 +384,6 @@ ridge_bvm <- function(mu, kappa, eval_points, subint_1, subint_2) {
       if (lsol >= 1) {
 
         isridge <- numeric(length = lsol)
-
         for (j in seq_len(lsol)) {
 
           isridge[j] <- H_eigenval_2(theta = c(theta1[i], sol[j]),
@@ -394,12 +393,16 @@ ridge_bvm <- function(mu, kappa, eval_points, subint_1, subint_2) {
         }
 
         sol <- sol[isridge == 1]
-        sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
-                                         kappa = c(k1, k2),
-                                         Lambda = matrix(c(0, lambda,
-                                                           lambda, 0),
-                                                         nrow = 2, ncol = 2),
-                                         density = "bvm")) < 1e-4]
+        if (length(sol) > 0) {
+
+          sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
+                                           kappa = c(k1, k2),
+                                           Lambda = matrix(c(0, lambda,
+                                                             lambda, 0),
+                                                           nrow = 2, ncol = 2),
+                                           density = "bvm")) < 1e-4]
+
+        }
 
         # Store the results
         theta1sol <- rep(theta1[i], length(sol))
@@ -510,7 +513,6 @@ ridge_bwc <- function(mu, xi, eval_points, subint_1, subint_2) {
       if (lsol >= 1) {
 
         isridge <- numeric(length = lsol)
-
         for (j in seq_len(lsol)) {
 
           # Check the eigenvalue condition for each candidate
@@ -520,14 +522,19 @@ ridge_bwc <- function(mu, xi, eval_points, subint_1, subint_2) {
         }
 
         sol <- sol[isridge == 1]
-        sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
-                                         xi = c(xi1, xi2, rho),
-                                         density = "bwc")) < 1e-4]
+        if (length(sol) > 0) {
+
+          sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
+                                           xi = c(xi1, xi2, rho),
+                                           density = "bwc")) < 1e-4]
+
+        }
 
         # Store the results
         theta1sol <- rep(theta1[i], length(sol))
         solution_theta1 <- append(solution_theta1, theta1sol)
         solution_theta2 <- append(solution_theta2, sol)
+
       }
 
     }
@@ -616,7 +623,6 @@ ridge_bwn <- function(mu, Sigma, kmax = 2, eval_points,
     if (lsol >= 1) {
 
       isridge <- numeric(length = lsol)
-
       for (j in seq_len(lsol)) {
 
         # Check the eigenvalue condition for each candidate
@@ -626,14 +632,19 @@ ridge_bwn <- function(mu, Sigma, kmax = 2, eval_points,
       }
 
       sol <- sol[isridge == 1]
-      sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
+      if (length(sol) > 0) {
+
+        sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
                                        mu = mu, Sigma = Sigma, k = K,
                                        density = "bwn")) < 1e-4]
+
+      }
 
       # Store the results
       theta1sol <- rep(theta1[i], length(sol))
       solution_theta1 <- append(solution_theta1, theta1sol)
       solution_theta2 <- append(solution_theta2, sol)
+
     }
 
   }
