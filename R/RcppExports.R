@@ -84,7 +84,7 @@ grad_hess_bwc <- function(theta2, theta1, xi) {
 #' @examples
 #' n <- 200
 #' x <- seq(-pi, pi, l = n)
-#' mu = c(0, 0)
+#' mu <- c(0, 0)
 #' kappa <- c(0.3, 0.4, 0.5)
 #' val <- sapply(x, function(th1) ridgetorus:::implicit_equation(
 #'     theta2 = x, theta1 = th1, density = "bvm", kappa = kappa[1:2],
