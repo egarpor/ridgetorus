@@ -167,7 +167,7 @@ or outliers, if any.
 ## References
 
 García-Portugués, E. and Prieto-Tirado, A. (2022). Toroidal PCA via
-density ridges. *arXiv:2202.XXXXX*. <https://arxiv.org/abs/2202.XXXXX>.
+density ridges. *arXiv:2212.10856*. <https://arxiv.org/abs/2212.10856>.
 
 Kato, S. and Pewsey, A. (2015). A Möbius transformation-induced
 distribution on the torus. *Biometrika*, 102(2):359–370.
