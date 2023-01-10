@@ -23,6 +23,4 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This is a new release.
-* NOTE "Possibly misspelled words in DESCRIPTION" has been double checked -- words are correct.
-* NOTE "Found the following (possibly) invalid URLs" has been double checked -- URLs are correct.
+* Fixes the additional issues signaled on https://www.stats.ox.ac.uk/pub/bdr/memtests/gcc-UBSAN/ridgetorus/.
