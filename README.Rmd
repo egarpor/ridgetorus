@@ -14,18 +14,29 @@ knitr::opts_chunk$set(
 ridgetorus
 ==========
 
-```{r, badges, echo = FALSE, results = 'asis'}
-cat(
-  badger::badge_license(license = "GPLv3", color = "blue",
-                        url = "https://www.gnu.org/licenses/gpl-3.0"),
-  badger::badge_github_actions(action = "R-CMD-check"),
-  badger::badge_github_actions(action = "test-coverage"),
-  badger::badge_codecov(ref = NULL),
-  badger::badge_cran_release(color = "green"),
-  badger::badge_cran_download(pkg = NULL, type = "grand-total"),
-  badger::badge_cran_download(pkg = NULL, type = "last-month")
-)
-```
+[![License:
+GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![R build
+status](https://github.com/egarpor/ridgetorus/workflows/R-CMD-check/badge.svg)](https://github.com/egarpor/ridgetorus/actions)
+[![R build
+status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)](https://github.com/egarpor/ridgetorus/actions)
+[![](https://codecov.io/gh/egarpor/ridgetorus/branch/main/graph/badge.svg)](https://app.codecov.io/gh/egarpor/ridgetorus)
+[![](https://www.r-pkg.org/badges/version/ridgetorus?color=green)](https://cran.r-project.org/package=ridgetorus)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
+[![](http://cranlogs.r-pkg.org/badges/last-month/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
+
+<!-- # ```{r, badges, echo = FALSE, results = 'asis'} -->
+<!-- # cat( -->
+<!-- #   badger::badge_license(license = "GPLv3", color = "blue", -->
+<!-- #                         url = "https://www.gnu.org/licenses/gpl-3.0"), -->
+<!-- #   badger::badge_github_actions(action = "R-CMD-check"), -->
+<!-- #   badger::badge_github_actions(action = "test-coverage"), -->
+<!-- #   badger::badge_codecov(ref = NULL), -->
+<!-- #   badger::badge_cran_release(color = "green"), -->
+<!-- #   badger::badge_cran_download(pkg = NULL, type = "grand-total"), -->
+<!-- #   badger::badge_cran_download(pkg = NULL, type = "last-month") -->
+<!-- # ) -->
+<!-- # ``` -->
 
 <!-- <img src="" alt="ridgetorus  hexlogo" align="right" width="200" style="padding: 0 15px; float: right;"/> -->
 
