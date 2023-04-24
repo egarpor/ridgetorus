@@ -184,6 +184,7 @@ slope <- v[2] / v[1]
 intercept <- 0
 pev <- cumsum(X_pcs_wc$sdev^2) / sum(X_pcs_wc$sdev^2)
 pev
+var_exp <- frechet_ss(x = X_pcs_wc$x)$var_exp
 summary(X_pcs_wc) 
 
 plot_apca(data_apca, intercept, slope, loc = c("A", "B"))
@@ -199,17 +200,17 @@ colors <- rainbow(dim(data_apca)[1])
 png("rainbow_AB_TRPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
 plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
-     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$"))
+     xlab = TeX("$s_1$"), ylab = TeX("$s_2$"))
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
 # order according to apca
-# ord <- order(X_pcs_wc$x[, 1])
-# colors <- rainbow(dim(data_apca)[1])
+ord <- order(X_pcs_wc$x[, 1])
+colors <- rainbow(dim(data_apca)[1])
 png("rainbow_AB_aPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
 plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
-     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
+     xlab = TeX("$s_1$"), ylab = TeX("$s_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
@@ -223,7 +224,7 @@ v <- X_pcs_wc$rotation[, 1]
 slope <- v[2] / v[1]
 intercept <- 0
 pev <- cumsum(X_pcs_wc$sdev^2) / sum(X_pcs_wc$sdev^2)
-pev
+var_exp <- frechet_ss(x = X_pcs_wc$x)$var_exp
 # 79,3% Vs 79,9% TR-PCA
 plot_apca(data_apca, intercept, slope, loc = c("A", "C"))
 plot_scores(X_pcs_wc$x, loc = c("A", "C"))
@@ -239,17 +240,17 @@ colors <- rainbow(dim(data_apca)[1])
 png("rainbow_AC_TRPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
 plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
-     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
+     xlab = TeX("$s_1$"), ylab = TeX("$s_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
 # order according to apca
-# ord <- order(X_pcs_wc$x[, 1])
-# colors <- rainbow(dim(data_apca)[1])
+ord <- order(-X_pcs_wc$x[, 1])
+colors <- rainbow(dim(data_apca)[1])
 png("rainbow_AC_aPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
 plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
-     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
+     xlab = TeX("$s_1$"), ylab = TeX("$s_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
@@ -266,6 +267,7 @@ slope <- v[2] / v[1]
 intercept <- 0
 pev <- cumsum(X_pcs_wc$sdev^2) / sum(X_pcs_wc$sdev^2)
 pev
+var_exp <- frechet_ss(x = X_pcs_wc$x)$var_exp
 # 77,8% Vs 79,3% TR-PCA
 plot_apca(data_apca, intercept, slope, loc = c("C", "D"))
 plot_scores(X_pcs_wc$x, loc = c("C", "D"))
@@ -280,17 +282,17 @@ colors <- rainbow(dim(data_apca)[1])
 png("rainbow_CD_TRPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
 plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
-     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
+     xlab = TeX("$s_1$"), ylab = TeX("$s_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
 # order according to apca
-# ord <- order(X_pcs_wc$x[, 1])
-# colors <- rainbow(dim(data_apca)[1])
+ord <- order(-X_pcs_wc$x[, 1])
+colors <- rainbow(dim(data_apca)[1])
 png("rainbow_CD_aPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
 plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
-     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
+     xlab = TeX("$s_1$"), ylab = TeX("$s_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
