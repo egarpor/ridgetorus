@@ -81,10 +81,12 @@ plot_scores <- function(scores, loc) {
   png(paste("scoresapca", loc[1], "_", loc[2], ".png", sep = ""),
       width = 7, height = 7, units = "in", res = 300, bg = "transparent")
   my.filled.contour(kde$eval.points[[1]], kde$eval.points[[2]],
-                    9 * kde$estimate, col  =  viridis::viridis(23),
+                    9 * kde$estimate,
+                    col  =  viridis::viridis(23, alpha = 0.85),
                     axes = FALSE, xlab = TeX("$\\s_1"),
                     ylab = TeX("$\\s_2"), levels = levels,
-                    xlim = c(-1.5*pi, 1.5*pi), ylim = c(-1.5*pi, 1.5*pi), cexlab = 1.25)
+                    xlim = c(-1.5*pi, 1.5*pi), ylim = c(-1.5*pi, 1.5*pi),
+                    cexlab = 1.25)
   sdetorus::torusAxis(cex.axis = 1.25)
   points(scores, cex = 0.5, pch = 16)
   dev.off()
@@ -151,7 +153,8 @@ plot_apca <- function(data_apca, intercept, slope, loc) {
   png(paste("santabarbara_apca_", loc[1], "_", loc[2], ".png", sep = ""),
   width = 7, height = 7, units = "in", res = 300, bg = "transparent")
   my.filled.contour(kde$eval.points[[1]], kde$eval.points[[2]],
-                    9 * kde$estimate, col  =  viridis::viridis(23),
+                    9 * kde$estimate, 
+                    col  =  viridis::viridis(23, alpha = 0.85),
                     axes = FALSE, xlab = TeX("$\\theta_1"),
                     ylab = TeX("$\\theta_2"), levels = levels,
                     xlim = c(-pi, pi), ylim = c(-pi, pi), cexlab = 1.25)
@@ -195,16 +198,18 @@ colors <- rainbow(dim(data_apca)[1])
 
 png("rainbow_AB_TRPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE )
+plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
+     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$"))
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
 # order according to apca
-ord <- order(X_pcs_wc$x[, 1])
-colors <- rainbow(dim(data_apca)[1])
+# ord <- order(X_pcs_wc$x[, 1])
+# colors <- rainbow(dim(data_apca)[1])
 png("rainbow_AB_aPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE )
+plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
+     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
@@ -233,16 +238,18 @@ colors <- rainbow(dim(data_apca)[1])
 
 png("rainbow_AC_TRPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE )
+plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
+     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
 # order according to apca
-ord <- order(X_pcs_wc$x[, 1])
-colors <- rainbow(dim(data_apca)[1])
+# ord <- order(X_pcs_wc$x[, 1])
+# colors <- rainbow(dim(data_apca)[1])
 png("rainbow_AC_aPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE )
+plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
+     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
@@ -272,16 +279,18 @@ colors <- rainbow(dim(data_apca)[1])
 
 png("rainbow_CD_TRPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE )
+plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
+     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
 # order according to apca
-ord <- order(X_pcs_wc$x[, 1])
-colors <- rainbow(dim(data_apca)[1])
+# ord <- order(X_pcs_wc$x[, 1])
+# colors <- rainbow(dim(data_apca)[1])
 png("rainbow_CD_aPCA.png",
     width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE )
+plot(data_apca[ord, ], cex = 0.5, pch = 16, col = colors, axes = FALSE,
+     xlab = TeX("$\theta_1$"), ylab = TeX("$\theta_2$") )
 sdetorus::torusAxis(cex.axis = 1.25)
 dev.off()
 
