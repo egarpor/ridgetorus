@@ -87,7 +87,8 @@ eig_vec_2 <- r * eig_vec_2
 grad <- r * grad / sqrt(rowSums(grad^2))
 grad_proj <- r * grad_proj / sqrt(rowSums(grad_proj^2))
 
-pdf("figures_vectorfields/u1.pdf", width = 7, height = 7)
+# pdf("figures_vectorfields/u1.pdf", width = 7, height = 7)
+png("figures_vectorfields/u1.png", width = 7, height = 7, units = "in", res = 300)
 ks::plotmixt(mus = mu, Sigmas = Sigma, props = 1, display = "filled.contour2",
              gridsize = rep(251, 2), xlim = c(-4, 4), ylim = c(-4, 4),
              cont = seq(0, 95, by = 5), col.fun = viridis::viridis,
@@ -99,7 +100,8 @@ points(xx, pch = ifelse(eig_val_1 >= 0, "+", "-"),
        col = ifelse(eig_val_1 >= 0, 2, 4), cex = 2)
 dev.off()
 
-pdf("figures_vectorfields/u2.pdf", width = 7, height = 7)
+# pdf("figures_vectorfields/u2.pdf", width = 7, height = 7)
+png("figures_vectorfields/u2.png", width = 7, height = 7, units = "in", res = 300)
 ks::plotmixt(mus = mu, Sigmas = Sigma, props = 1, display = "filled.contour2",
              gridsize = rep(251, 2), xlim = c(-4, 4), ylim = c(-4, 4),
              cont = seq(0, 95, by = 5), col.fun = viridis::viridis,
@@ -111,7 +113,8 @@ points(xx, pch = ifelse(eig_val_2 >= 0, "+", "-"),
        col = ifelse(eig_val_2 >= 0, 2, 4), cex = 2)
 dev.off()
 
-pdf("figures_vectorfields/Df.pdf", width = 7, height = 7)
+# pdf("figures_vectorfields/Df.pdf", width = 7, height = 7)
+png("figures_vectorfields/Df.png", width = 7, height = 7, units = "in", res = 300)
 ks::plotmixt(mus = mu, Sigmas = Sigma, props = 1, display = "filled.contour2",
              gridsize = rep(251, 2), xlim = c(-4, 4), ylim = c(-4, 4),
              cont = seq(0, 95, by = 5), col.fun = viridis::viridis,
@@ -121,7 +124,8 @@ arrows(x0 = xx[, 1], y0 = xx[, 2],
        length = 0.1, angle = 20, col = 1, lwd = 3)
 dev.off()
 
-pdf("figures_vectorfields/Dfp.pdf", width = 7, height = 7)
+# pdf("figures_vectorfields/Dfp.pdf", width = 7, height = 7)
+png("figures_vectorfields/Dfp.png", width = 7, height = 7, units = "in", res = 300)
 ks::plotmixt(mus = mu, Sigmas = Sigma, props = 1, display = "filled.contour2",
              gridsize = rep(251, 2), xlim = c(-4, 4), ylim = c(-4, 4),
              cont = seq(0, 95, by = 5), col.fun = viridis::viridis,
