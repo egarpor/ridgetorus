@@ -31,7 +31,7 @@ show_ridge <- function(fit, col_data = 1, main = "", N = 5e2) {
 
 }
 
-## Example with concentrated wrapped normal
+## Example 1: concentrated wrapped normal
 
 # Simulate data
 set.seed(1)
@@ -89,13 +89,13 @@ range(X_pcs_wc$x)
 X_pcs_wc$x[, 1] <- -1 * X_pcs_wc$x[, 1]
 pdf(file = "figures_comparison/bwn_1_scores_apca.pdf")
 plot(X_pcs_wc$x[ord, ], col = colors, pch = 16, xlim = c(-pi, pi),
-     ylim = c(-pi, pi), xlab = TeX("$s_1$"), ylab = TeX("$s_2$"), axes = FALSE,
-     cex.lab = 1.25)
+     ylim = c(-pi, pi), xlab = TeX("$s_1$"), ylab = TeX("$s_2$"),
+     axes = FALSE, cex.lab = 1.25)
 sdetorus::torusAxis(cex.axis = 1.25)
 abline(h = 0, lty = 3)
 dev.off()
 
-## Example with a more spread wrapped normal
+## Example 2: more spread wrapped normal
 
 # Simulate data
 set.seed(2)
@@ -148,14 +148,14 @@ dev.off()
 # Plot APCA scores
 range(X_pcs_wc$x)
 pdf(file = "figures_comparison/bwn_2_scores_apca.pdf")
-plot(X_pcs_wc$x[ord, ], col = colors, pch = 16, xlim = c(-4.5, 4.5),
-     ylim = c(-4.5, 4.5), xlab = TeX("$s_1$"), ylab = TeX("$s_2$"),
+plot(X_pcs_wc$x[ord, ], col = colors, pch = 16, xlim = c(-pi, pi) * 1.3,
+     ylim = c(-pi, pi) * 1.3, xlab = TeX("$s_1$"), ylab = TeX("$s_2$"),
      axes = FALSE, cex.lab = 1.25)
 sdetorus::torusAxis(cex.axis = 1.25)
 abline(h = 0, lty = 3)
 dev.off()
 
-## Example with wrapped Cauchy
+## Example 3: wrapped Cauchy
 
 # Simulate data
 set.seed(3)
@@ -205,14 +205,14 @@ dev.off()
 range(X_pcs_wc$x)
 X_pcs_wc$x[, 1] <- -1 * X_pcs_wc$x[, 1]
 pdf(file = "figures_comparison/bwc_scores_apca.pdf")
-plot(X_pcs_wc$x[ord, ], col = colors, pch = 16, xlim = c(-4.5, 4.5),
-     ylim = c(-4.5, 4.5), xlab = TeX("$s_1$"), ylab = TeX("$s_2$"),
+plot(X_pcs_wc$x[ord, ], col = colors, pch = 16, xlim = c(-pi, pi) * 1.3,
+     ylim = c(-pi, pi) * 1.3, xlab = TeX("$s_1$"), ylab = TeX("$s_2$"),
      cex.lab = 1.25, axes = FALSE)
 sdetorus::torusAxis(cex.axis = 1.25)
 abline(h = 0, lty = 3)
 dev.off()
 
-## Simpson's paradox example with two clusters
+## Example 4: Simpson's paradox with two clusters
 
 # Simulate data
 set.seed(4)
@@ -268,8 +268,8 @@ dev.off()
 # Plot APCA scores
 range(X_pcs_wc$x)
 pdf(file = "figures_comparison/simpson_scores_apca.pdf")
-plot(X_pcs_wc$x[ord, ], col = colors, pch = 16, xlim = c(-4.5, 4.5),
-     ylim = c(-4.5, 4.5), xlab = TeX("$s_1$"), ylab = TeX("$s_2$"),
+plot(X_pcs_wc$x[ord, ], col = colors, pch = 16, xlim = c(-pi, pi) * 1.3,
+     ylim = c(-pi, pi) * 1.3, xlab = TeX("$s_1$"), ylab = TeX("$s_2$"),
      axes = FALSE, cex.lab = 1.25)
 sdetorus::torusAxis(cex.axis = 1.25)
 abline(h = 0, lty = 3)
