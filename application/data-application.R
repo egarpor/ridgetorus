@@ -157,7 +157,7 @@ analysis <- function(x, loc, col = "red") {
   png(paste("figures_app/kde", loc[1], "_", loc[2], ".png", sep = ""),
       width = 7, height = 7, units = "in", res = 300, bg = "transparent")
   my.filled.contour(kde$eval.points[[1]], kde$eval.points[[2]],
-                    9 * kde$estimate, col  =  viridis::viridis(23),
+                    9 * kde$estimate, col  =  viridis::viridis(23, alpha = 0.85),
                     axes = FALSE, xlab = TeX(paste("$\\theta_", loc[1],
                                                    sep = "")),
                     ylab = TeX(paste("$\\theta_", loc[2], sep = "")),
@@ -173,7 +173,7 @@ analysis <- function(x, loc, col = "red") {
   # Plot the results and save the image in a file
   png(paste("figures_app/vonMises", loc[1], "_", loc[2], ".png", sep = ""),
       width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-  my.filled.contour(x1, y1, densityvalues_vm, col = viridis::viridis(23),
+  my.filled.contour(x1, y1, densityvalues_vm, col = viridis::viridis(23, alpha = 0.85),
                     xlab = TeX(paste("$\\theta_", loc[1], sep = "")),
                     ylab = TeX(paste("$\\theta_", loc[2], sep = "")),
                     axes = FALSE, levels = levels, cexlab = 1.25)
@@ -187,7 +187,7 @@ analysis <- function(x, loc, col = "red") {
   # Plot the results and save it into a file
   png(paste("figures_app/wrappedCauchy", loc[1], "_", loc[2], ".png", sep = ""),
       width = 7, height = 7, units = "in", res = 300, bg = "transparent")
-  my.filled.contour(x1, y1, densityvalues_wc, col = viridis::viridis(23),
+  my.filled.contour(x1, y1, densityvalues_wc, col = viridis::viridis(23, alpha = 0.85),
                     xlab = TeX(paste("$\\theta_", loc[1], sep = "")),
                     ylab = TeX(paste("$\\theta_", loc[2], sep = "")),
                     axes = FALSE, levels = levels, cexlab = 1.25)
@@ -270,7 +270,7 @@ analysis <- function(x, loc, col = "red") {
   png(paste("figures_app/scores", loc[1], "_", loc[2], ".png", sep = ""),
       width = 7, height = 7, units = "in", res = 300, bg = "transparent")
   my.filled.contour(kde$eval.points[[1]], kde$eval.points[[2]],
-                    9 * kde$estimate, col  =  viridis::viridis(23),
+                    9 * kde$estimate, col  =  viridis::viridis(23, alpha = 0.85),
                     axes = FALSE, xlab = TeX("$\\s_1"),
                     ylab = TeX("$\\s_2"), levels = levels,
                     xlim = c(-pi, pi), ylim = c(-pi, pi), cexlab = 1.25)
