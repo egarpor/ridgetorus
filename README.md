@@ -11,6 +11,18 @@ status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
 [![](http://cranlogs.r-pkg.org/badges/last-month/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
 
+<!-- # ```{r, badges, echo = FALSE, results = 'asis'} -->
+<!-- # cat( -->
+<!-- #   badger::badge_license(license = "GPLv3", color = "blue", -->
+<!-- #                         url = "https://www.gnu.org/licenses/gpl-3.0"), -->
+<!-- #   badger::badge_github_actions(action = "R-CMD-check"), -->
+<!-- #   badger::badge_github_actions(action = "test-coverage"), -->
+<!-- #   badger::badge_codecov(ref = NULL), -->
+<!-- #   badger::badge_cran_release(color = "green"), -->
+<!-- #   badger::badge_cran_download(pkg = NULL, type = "grand-total"), -->
+<!-- #   badger::badge_cran_download(pkg = NULL, type = "last-month") -->
+<!-- # ) -->
+<!-- # ``` -->
 <!-- <img src="" alt="ridgetorus  hexlogo" align="right" width="200" style="padding: 0 15px; float: right;"/> -->
 
 ## Overview
@@ -166,8 +178,9 @@ or outliers, if any.
 
 ## References
 
-García-Portugués, E. and Prieto-Tirado, A. (2022). Toroidal PCA via
-density ridges. *arXiv:2212.10856*. <https://arxiv.org/abs/2212.10856>.
+García-Portugués, E. and Prieto-Tirado, A. (2023). Toroidal PCA via
+density ridges. *Statistics and Computing*, 33(5):107.
+[doi:10.1007/s11222-023-10273-9](https://doi.org/10.1007/s11222-023-10273-9).
 
 Kato, S. and Pewsey, A. (2015). A Möbius transformation-induced
 distribution on the torus. *Biometrika*, 102(2):359–370.

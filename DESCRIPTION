@@ -1,8 +1,8 @@
 Package: ridgetorus
 Type: Package
 Title: PCA on the Torus via Density Ridges
-Version: 1.0.1
-Date: 2023-01-09
+Version: 1.0.2
+Date: 2023-08-19
 Authors@R: c(
     person(given = "Eduardo", family = "García-Portugués",
            role = c("aut", "cre"), email = "edgarcia@est-econ.uc3m.es",
@@ -16,7 +16,8 @@ Description: Implementation of a Principal Component Analysis (PCA) in the
     wrapped Cauchy distribution models and provides the associated scores and
     variance decomposition. Auxiliary functions for evaluating, fitting, and
     sampling these models are also provided. The package provides replicability
-    to García-Portugués and Prieto-Tirado (2022) <arXiv:2212.10856>.
+    to García-Portugués and Prieto-Tirado (2023) 
+    <doi:10.1007/s11222-023-10273-9>.
 License: GPL-3
 LazyData: true
 Depends:
@@ -44,6 +45,6 @@ LinkingTo: Rcpp, RcppArmadillo
 URL: https://github.com/egarpor/ridgetorus
 BugReports: https://github.com/egarpor/ridgetorus
 Encoding: UTF-8
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3
 VignetteBuilder: knitr
 Config/testthat/edition: 3
