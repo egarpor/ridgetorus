@@ -22,5 +22,5 @@
     From: man/wind.Rd
     Status: 403
     Message: Forbidden
-  This has been double checked. The URL works fine.  
+  **This has been double checked. The URL works fine.**
   
