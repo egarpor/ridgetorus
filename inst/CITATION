@@ -4,10 +4,11 @@ note <- paste("R package version", meta$Version)
 
 citHeader("To cite ridgetorus in publications use:")
 
-citEntry(entry = "Manual",
+bibentry(
+  bibtype      = "Manual",
   title        = "{ridgetorus}: {PCA} on the Torus via Density Ridges",
-  author       = personList(as.person("Eduardo García-Portugués"),
-                   as.person("Arturo Prieto-Tirado")),
+  author       = c(person(given = "Eduardo", family = "García-Portugués"),
+                   person(given = "Arturo", family = "Prieto-Tirado")),
   year = year,
   note = note,
   url = "https://github.com/egarpor/ridgetorus",
@@ -16,4 +17,22 @@ citEntry(entry = "Manual",
         "ridgetorus: {PCA} on the Torus via Density Ridges.",
         paste0("R package version ", meta$Version, "."),
         "https://github.com/egarpor/ridgetorus")
+)
+
+bibentry(
+  bibtype      = "Article",
+  title        = "Toroidal {PCA} via density ridges",
+  author       = c(person(given = "Eduardo", family = "García-Portugués"),
+                   person(given = "Arturo", family = "Prieto-Tirado")),
+  journal      = "Statistics and Computing",
+  year         = "2023",
+  volume       = "33",
+  number       = "5",
+  pages        = "107",
+  url          = "https://doi.org/10.1007/s11222-023-10273-9",
+  textVersion  =
+  paste("García-Portugués, E. and Prieto-Tirado, A. (2023).",
+        "Toroidal PCA via density ridges.",
+        "Statistics and Computing, 33(5):107.",
+        "https://doi.org/10.1007/s11222-023-10273-9")
 )
