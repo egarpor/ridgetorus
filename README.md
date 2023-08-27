@@ -30,7 +30,7 @@ status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)
 Implementation of principal component analysis on the two-dimensional
 torus $\mathbb{T}^2=[-\pi,\pi)^2$ via density ridges. Software companion
 for the paper “*Toroidal PCA via density ridges*” (García-Portugués and
-Prieto-Tirado, 2022).
+Prieto-Tirado, 2023).
 
 ## Installation
 
@@ -106,7 +106,7 @@ torus_pairs(rpca$scores, col_data = "red", bwd = "EMI", scales = rpca$scales)
 
 ## Data application in oceanography
 
-The data applications in García-Portugués and Prieto-Tirado (2022) can
+The data applications in García-Portugués and Prieto-Tirado (2023) can
 be reproduced through the script
 [data-application.R](https://github.com/egarpor/egarpor/blob/master/application/data-application.R).
 The code snippet below illustrates the toroidal PCA analysis onto
