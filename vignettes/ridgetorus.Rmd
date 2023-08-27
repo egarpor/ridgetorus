@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-In a wide spectrum of applied fields, data is present as multivariate circular data (toroidal data), rendering spurious the application of many standard statistical tools. The package `ridgetorus` implements Toroidal Ridge PCA (TR-PCA), an alternative to PCA suited to toroidal data  [@Garcia-Portugues2022]. Below are some simple examples of the use of TR-PCA through `ridge_pca()`, the main function in `ridgetorus`.
+In a wide spectrum of applied fields, data is present as multivariate circular data (toroidal data), rendering spurious the application of many standard statistical tools. The package `ridgetorus` implements Toroidal Ridge PCA (TR-PCA), an alternative to PCA suited to toroidal data  [@Garcia-Portugues2023]. Below are some simple examples of the use of TR-PCA through `ridge_pca()`, the main function in `ridgetorus`.
 
 ## Texan wind
 
