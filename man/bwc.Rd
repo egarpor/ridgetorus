@@ -50,7 +50,7 @@ likelihood optimizer. Default to \code{c(-pi, -pi, 0, 0, -1 + 1e-3)} and
 \code{c(pi, pi, 1 - 1e-3, 1 - 1e-3, 1 - 1e-3)}.}
 
 \item{...}{further parameters passed to
-\code{\link[=sdetorus]{mleOptimWrapper}}.}
+\code{\link[sdetorus]{mleOptimWrapper}}.}
 }
 \value{
 \itemize{
