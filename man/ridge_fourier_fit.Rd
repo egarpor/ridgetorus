@@ -14,7 +14,7 @@ ridge_fourier_fit(curve, K = 15, norm_prop = 1, N = 1280, at2 = TRUE)
 \item{norm_prop}{percentage of explained norm. Defaults to \code{1}.}
 
 \item{N}{number of Gaussian quadrature points, passed to
-\link[=sphunif]{Gauss_Legen_nodes}. Defaults to \code{1280}.}
+\link[sphunif]{Gauss_Legen_nodes}. Defaults to \code{1280}.}
 
 \item{at2}{do the \code{atan2} fit instead of the sine fit (only using
 \eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not

@@ -1,15 +1,9 @@
 ## Test environments
 
 * local R installation, R 4.2.2
-* win-builder (release, devel)
-* Windows Server 2022, R-release, 32/64 bit
-* Windows Server 2022, R-devel, 64 bit
-* Windows Server 2022, R-oldrel, 32/64 bit
-* Windows Server 2022, R-patched, 32/64 bit
-* Ubuntu Linux 20.04.1 LTS, R-release, GCC
-* Ubuntu Linux 20.04.1 LTS, R-devel, GCC
-* Debian Linux, R-release, GCC
-* Debian Linux, R-devel, GCC
+* check_win_release()
+* check_win_devel()
+* check_mac_release()
 
 ## R CMD check results
 
@@ -17,10 +11,5 @@
 
 ## Comments
 
-* Found the following (possibly) invalid URLs:
-  URL: https://www.jstor.org/stable/2984799
-    From: man/wind.Rd
-    Status: 403
-    Message: Forbidden
-  **This has been double checked. The URL works fine.**
+Fix NOTEs on Rd cross-references and CRAN incoming feasibility.
   

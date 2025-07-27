@@ -103,7 +103,7 @@ const_bvm <- function(kappa, M = 25, MC = 1e4) {
   } else {
 
     message(paste("Unreliable constant series for kappa1 = 0 or kappa2 = 0 and",
-                  "abs(lambda) <= 30. Using Monte Carlo integration."))
+                  "abs(lambda) >= 30. Using Monte Carlo integration."))
     const <- sdetorus::mcTorusIntegrate(f = function(x) {
       d_bvm(x = x, mu = c(0, 0), kappa = kappa, log_const = 0)},
       p = 2, M = MC, fVect = TRUE)
@@ -142,7 +142,7 @@ r_bvm <- function(n, mu, kappa) {
 #' likelihood optimizer. Default to \code{c(-pi, -pi, 0, 0, -30)} and
 #' \code{c(pi, pi, 30, 30, 30)}.
 #' @param ... further parameters passed to
-#' \code{\link[=sdetorus]{mleOptimWrapper}}.
+#' \code{\link[sdetorus]{mleOptimWrapper}}.
 #' @param hom assume a homogeneous distribution with equal marginal
 #' concentrations? Defaults to \code{FALSE}.
 #' @param indep set the dependence parameter to zero? Defaults to \code{FALSE}.

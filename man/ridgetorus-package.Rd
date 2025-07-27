@@ -19,6 +19,14 @@ García-Portugués, E. and Prieto-Tirado, A. (2023). Toroidal PCA via density
 ridges. \emph{Statistics and Computing}, 33(5):107.
 \doi{10.1007/s11222-023-10273-9}
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/egarpor/ridgetorus}
+  \item Report bugs at \url{https://github.com/egarpor/ridgetorus/issues}
+}
+
+}
 \author{
 Eduardo García-Portugués and Arturo Prieto-Tirado.
 }

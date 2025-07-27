@@ -11,3 +11,7 @@
 * Update reference.
 * Drop C++11 requirement to adhere to new CRAN policies.
 * Drop `personList()` and `citEntry()`.
+
+# ridgetorus 1.0.3
+
+* Fix NOTEs on Rd cross-references and CRAN incoming feasibility.
