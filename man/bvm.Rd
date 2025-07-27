@@ -75,7 +75,7 @@ concentrations? Defaults to \code{FALSE}.}
 \item{indep}{set the dependence parameter to zero? Defaults to \code{FALSE}.}
 
 \item{...}{further parameters passed to
-\code{\link[=sdetorus]{mleOptimWrapper}}.}
+\code{\link[sdetorus]{mleOptimWrapper}}.}
 }
 \value{
 \itemize{
