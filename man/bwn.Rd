@@ -37,7 +37,7 @@ is evaluated.}
 parameters for the maximum likelihood optimizer.}
 
 \item{...}{further parameters passed to
-\code{\link[=sdetorus]{mleOptimWrapper}}.}
+\code{\link[sdetorus]{mleOptimWrapper}}.}
 }
 \value{
 \itemize{

@@ -7,7 +7,7 @@
 #' @param curve points of the curve.
 #' @param norm_prop percentage of explained norm. Defaults to \code{1}.
 #' @param N number of Gaussian quadrature points, passed to
-#' \link[=sphunif]{Gauss_Legen_nodes}. Defaults to \code{1280}.
+#' \link[sphunif]{Gauss_Legen_nodes}. Defaults to \code{1280}.
 #' @param K number of terms in the Fourier expansion. Defaults to \code{15}.
 #' @param at2 do the \code{atan2} fit instead of the sine fit (only using
 #' \eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not

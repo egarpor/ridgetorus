@@ -20,4 +20,4 @@
 #' @import graphics grDevices stats Rcpp
 #' @useDynLib ridgetorus
 #' @aliases ridgetorus ridgetorus-package
-NULL
+"_PACKAGE"
