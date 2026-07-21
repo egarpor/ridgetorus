@@ -4,6 +4,7 @@
 ^README.*$
 ^TODO$
 ^data-raw$
+^logo$
 ^application$
 ^experiments$
 ^videos$
