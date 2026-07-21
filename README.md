@@ -23,7 +23,7 @@ status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)
 <!-- #   badger::badge_cran_download(pkg = NULL, type = "last-month") -->
 <!-- # ) -->
 <!-- # ``` -->
-<!-- <img src="" alt="ridgetorus  hexlogo" align="right" width="200" style="padding: 0 15px; float: right;"/> -->
+<img src="man/figures/logo.png" alt="ridgetorus hexlogo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
 ## Overview
 
