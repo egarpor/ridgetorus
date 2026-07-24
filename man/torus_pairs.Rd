@@ -26,7 +26,7 @@ Defaults to \code{10}.}
 \item{col_data}{color(s) for the data points. Defaults to \code{1}.}
 
 \item{ylim_dens}{common \code{ylim} for the diagonal plots. Defaults to
-\code{c(0, 1)}.}
+\code{c(0, 1.5)}.}
 
 \item{bwd}{type of bandwidth selector used in the kernel density plots.
 Either \code{"ROT"}, \code{"EMI"}, \code{"AMI"}, \code{"LSCV"}, or
@@ -74,4 +74,8 @@ torus_pairs(fit$scores, col_data = col)}
 García-Portugués, E. (2013). Exact risk improvement of bandwidth selectors
 for kernel density estimation with directional data. \emph{Electronic Journal
 of Statistics}, 7:1655--1685. \doi{10.1214/13-ejs821}
+}
+\seealso{
+\code{\link{ridge_pca}} to obtain the scores and
+\code{\link{show_ridge_pca}} to visualize a fitted ridge.
 }

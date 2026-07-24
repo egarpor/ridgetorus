@@ -59,9 +59,11 @@ constant when there is no series expansion. Defaults to \code{1e4}.}
 
 \item{n}{sample size.}
 
-\item{lower, upper}{vectors of length \code{5} with the bounds for the
-likelihood optimizer. Default to \code{c(-pi, -pi, 0, 0, -30)} and
-\code{c(pi, pi, 30, 30, 30)}.}
+\item{lower, upper}{bounds for the optimizer. For \code{fit_bvm_mle}, vectors
+of length \code{5} defaulting to \code{c(-pi, -pi, 0, 0, -30)} and
+\code{c(pi, pi, 30, 30, 30)}. For \code{fit_bvm_mm} (concentrations only),
+vectors of length \code{3} defaulting to \code{c(0, 0, -30)} and
+\code{c(30, 30, 30)}.}
 
 \item{start}{a vector of length \code{5} with the initial values for the
 maximum likelihood optimizer. The first two entries are disregarded in
@@ -84,9 +86,9 @@ concentrations? Defaults to \code{FALSE}.}
   \item \code{const_bvm}: the value of the normalizing constant
   \eqn{T(\kappa_1, \kappa_2, \lambda)}.
   \item \code{r_bvm}: a matrix of size \code{c(n, 2)} with the random sample.
-  \item \code{fit_mme_bvm, fit_mle_bvm}: a list with the estimated parameters
-  \eqn{(\mu_1, \mu_2, \kappa_1, \kappa_2, \lambda)} and the object \code{opt}
-  containing the optimization summary.
+  \item \code{fit_bvm_mm, fit_bvm_mle}: a list with the estimated parameters
+  \eqn{(\mu_1, \mu_2, \kappa_1, \kappa_2, \lambda)}. \code{fit_bvm_mle} also
+  returns the object \code{opt} with the optimization summary.
 }
 }
 \description{
@@ -119,8 +121,8 @@ filled.contour(th, th, matrix(d, nth, nth), col = viridisLite::viridis(31),
 
 n <- 100
 samp <- r_bvm(n = n, mu = mu, kappa = kappa)
-(param_mm <- fit_bvm_mm(samp)$par)
-(param_mle <- fit_bvm_mle(samp)$par)
+(param_mm <- fit_bvm_mm(samp))
+(param_mle <- fit_bvm_mle(samp)$opt$par)
 }
 \references{
 Mardia, K. V., Hughes, G., Taylor, C. C., and Singh, H. (2008).
@@ -131,4 +133,9 @@ A multivariate von Mises with applications to bioinformatics.
 Singh, H., Hnizdo, V., and Demchuk, E. (2002). Probabilistic model for two
 dependent circular variables. \emph{Biometrika}, 89(3):719--723.
 \doi{10.1093/biomet/89.3.719}
+}
+\seealso{
+\code{\link{bwc}} and \code{\link{bwn}} for the other toroidal
+distributions, \code{\link{ridge_bvm}} for its density ridge, and
+\code{\link{ridge_pca}} for the toroidal PCA built on this model.
 }

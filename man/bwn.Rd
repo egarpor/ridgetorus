@@ -73,5 +73,10 @@ filled.contour(th, th, matrix(d, nth, nth), col = viridisLite::viridis(31),
 
 n <- 100
 samp <- r_bwn(n = 100, mu = mu, Sigma = Sigma)
-(param_mle <- fit_bwn_mle(samp)$par)
+(param_mle <- fit_bwn_mle(samp)$opt$par)
+}
+\seealso{
+\code{\link{bvm}} and \code{\link{bwc}} for the toroidal
+distributions used by \code{\link{ridge_pca}}, and \code{\link{ridge_bwn}}
+for the density ridge of this model.
 }

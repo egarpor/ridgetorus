@@ -65,3 +65,8 @@ plot(ridge, xlim = c(-pi, pi), ylim = c(-pi, pi))
 coefs <- ridge_fourier_fit(ridge)
 points(ridge_curve(th, mu = mu, coefs = coefs), col = 4, cex = 0.5)}
 }
+\seealso{
+\code{\link{ridge_curve}} to evaluate the fitted curve,
+\code{\link{ridge_bvm}} for the ridge to fit, and \code{\link{ridge_pca}}
+for the full toroidal PCA.
+}
