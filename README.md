@@ -1,4 +1,4 @@
-# ridgetorus <img src="man/figures/logo.png" align="right" height="150" alt="ridgetorus hexlogo"/>
+# ridgetorus <img src="man/figures/logo.png" align="right" height="200" alt="ridgetorus hexlogo"/>
 
 [![License:
 GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
