@@ -16,4 +16,4 @@ pkg-devtools.R
 ^\.github$
 ^codecov\.yml$
 ^CRAN-SUBMISSION$
-ridgetorus.code-workspace
+ridgetorus\.code-workspace
