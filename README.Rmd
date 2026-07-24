@@ -43,14 +43,16 @@ Implementation of principal component analysis on the two-dimensional torus $\ma
 
 ## Installation
 
-Get the latest version from GitHub:
+```{r, install-CRAN, eval = FALSE}
+# Install it from CRAN
+install.packages("ridgetorus")
+library(ridgetorus)
+```
 
-```{r, install-devtools, eval = FALSE}
-# Install the package
-library(devtools)
-install_github("egarpor/ridgetorus")
-
-# Load package
+```{r, install-GitHub, eval = FALSE}
+# Alternatively, from GitHub
+library(pak)
+pak("egarpor/ridgetorus")
 library(ridgetorus)
 ```
 
@@ -98,7 +100,7 @@ torus_pairs(rpca$scores, col_data = "red", bwd = "EMI", scales = rpca$scales)
 
 ## Data application in oceanography
 
-The data applications in García-Portugués and Prieto-Tirado (2023) can be reproduced through the script [data-application.R](https://github.com/egarpor/egarpor/blob/master/application/data-application.R). The code snippet below illustrates the toroidal PCA analysis onto currents of four zones at Santa Barbara strait. Zone A and B are on the northern coast of Santa Barbara Channel while zone C and D, are at the top and bottom ends of the interisland channel.
+The data applications in García-Portugués and Prieto-Tirado (2023) can be reproduced through the script [data-application.R](https://github.com/egarpor/ridgetorus/blob/master/application/data-application.R). The code snippet below illustrates the toroidal PCA analysis onto currents of four zones at Santa Barbara strait. Zone A and B are on the northern coast of Santa Barbara Channel while zone C and D, are at the top and bottom ends of the interisland channel.
 
 ```{r, santabarbara}
 # Load data

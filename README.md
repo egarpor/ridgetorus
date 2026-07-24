@@ -12,35 +12,48 @@ status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)
 [![](http://cranlogs.r-pkg.org/badges/last-month/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
 
 <!-- # ```{r, badges, echo = FALSE, results = 'asis'} -->
+
 <!-- # cat( -->
+
 <!-- #   badger::badge_license(license = "GPLv3", color = "blue", -->
+
 <!-- #                         url = "https://www.gnu.org/licenses/gpl-3.0"), -->
+
 <!-- #   badger::badge_github_actions(action = "R-CMD-check"), -->
+
 <!-- #   badger::badge_github_actions(action = "test-coverage"), -->
+
 <!-- #   badger::badge_codecov(ref = NULL), -->
+
 <!-- #   badger::badge_cran_release(color = "green"), -->
+
 <!-- #   badger::badge_cran_download(pkg = NULL, type = "grand-total"), -->
+
 <!-- #   badger::badge_cran_download(pkg = NULL, type = "last-month") -->
+
 <!-- # ) -->
+
 <!-- # ``` -->
 
 ## Overview
 
 Implementation of principal component analysis on the two-dimensional
-torus $\mathbb{T}^2=[-\pi,\pi)^2$ via density ridges. Software companion
-for the paper “*Toroidal PCA via density ridges*” (García-Portugués and
-Prieto-Tirado, 2023).
+torus $`\mathbb{T}^2=[-\pi,\pi)^2`$ via density ridges. Software
+companion for the paper “*Toroidal PCA via density ridges*”
+(García-Portugués and Prieto-Tirado, 2023).
 
 ## Installation
 
-Get the latest version from GitHub:
+``` r
+# Install it from CRAN
+install.packages("ridgetorus")
+library(ridgetorus)
+```
 
 ``` r
-# Install the package
-library(devtools)
-install_github("egarpor/ridgetorus")
-
-# Load package
+# Alternatively, from GitHub
+library(pak)
+pak("egarpor/ridgetorus")
 library(ridgetorus)
 ```
 
@@ -64,7 +77,7 @@ rpca <- ridge_pca(x = data, type = "bvm")
 show_ridge_pca(rpca, col_data = "red")
 ```
 
-<img src="README/README-bvm-1.png" style="display: block; margin: auto;" />
+<img src="README/README-bvm-1.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 
@@ -72,13 +85,13 @@ show_ridge_pca(rpca, col_data = "red")
 torus_pairs(data, col_data = "red", bwd = "EMI")
 ```
 
-<img src="README/README-bvm-2.png" style="display: block; margin: auto;" />
+<img src="README/README-bvm-2.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 torus_pairs(rpca$scores, col_data = "red", bwd = "EMI", scales = rpca$scales)
 ```
 
-<img src="README/README-bvm-3.png" style="display: block; margin: auto;" />
+<img src="README/README-bvm-3.png" alt="" style="display: block; margin: auto;" />
 
 ### Bivariate wrapped Cauchy
 
@@ -93,7 +106,7 @@ rpca <- ridge_pca(x = data, type = "bwc")
 show_ridge_pca(rpca, col_data = "red")
 ```
 
-<img src="README/README-bwc-1.png" style="display: block; margin: auto;" />
+<img src="README/README-bwc-1.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 
@@ -101,13 +114,13 @@ show_ridge_pca(rpca, col_data = "red")
 torus_pairs(rpca$scores, col_data = "red", bwd = "EMI", scales = rpca$scales)
 ```
 
-<img src="README/README-bwc-2.png" style="display: block; margin: auto;" />
+<img src="README/README-bwc-2.png" alt="" style="display: block; margin: auto;" />
 
 ## Data application in oceanography
 
 The data applications in García-Portugués and Prieto-Tirado (2023) can
 be reproduced through the script
-[data-application.R](https://github.com/egarpor/egarpor/blob/master/application/data-application.R).
+[data-application.R](https://github.com/egarpor/ridgetorus/blob/master/application/data-application.R).
 The code snippet below illustrates the toroidal PCA analysis onto
 currents of four zones at Santa Barbara strait. Zone A and B are on the
 northern coast of Santa Barbara Channel while zone C and D, are at the
@@ -122,44 +135,44 @@ rpca_AB <- ridge_pca(x = santabarbara[c("A", "B")], type = "auto")
 show_ridge_pca(fit = rpca_AB, col_data = "black", n_max = 1e3)
 ```
 
-<img src="README/README-santabarbara-1.png" style="display: block; margin: auto;" />
+<img src="README/README-santabarbara-1.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 torus_pairs(santabarbara[c("A", "B")], col_data = "black")
 ```
 
-<img src="README/README-santabarbara-2.png" style="display: block; margin: auto;" />
+<img src="README/README-santabarbara-2.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 torus_pairs(rpca_AB$scores, col_data = "black", scales = rpca_AB$scales)
 ```
 
-<img src="README/README-santabarbara-3.png" style="display: block; margin: auto;" />
+<img src="README/README-santabarbara-3.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 rpca_AB$type
 #> [1] "bwc"
 rpca_AB$var_exp
-#> [1] 0.7450665 1.0000000
+#> [1] 0.7450667 1.0000000
 
 # Example with zone C-D with automatic comparison between bvm and bwc
 rpca_CD <- ridge_pca(x = santabarbara[c("C", "D")], type = "auto")
 show_ridge_pca(fit = rpca_CD, col_data = "black", n_max = 1e3)
 ```
 
-<img src="README/README-santabarbara-4.png" style="display: block; margin: auto;" />
+<img src="README/README-santabarbara-4.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 torus_pairs(santabarbara[c("C", "D")], col_data = "black")
 ```
 
-<img src="README/README-santabarbara-5.png" style="display: block; margin: auto;" />
+<img src="README/README-santabarbara-5.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 torus_pairs(rpca_CD$scores, col_data = "black", scales = rpca_CD$scales)
 ```
 
-<img src="README/README-santabarbara-6.png" style="display: block; margin: auto;" />
+<img src="README/README-santabarbara-6.png" alt="" style="display: block; margin: auto;" />
 
 ``` r
 rpca_CD$type
