@@ -4,7 +4,7 @@
 #'
 #' @description The Santa Barbara Channel is a coastal area in California. This
 #' dataset contains the sea currents in the four areas present in the
-#' data application in García-Portugués and Prieto-Tirado (2022). Precisely,
+#' data application in García-Portugués and Prieto-Tirado (2023). Precisely,
 #' it contains the 24-hour speed-weighted mean of the currents' direction in
 #' each of the four areas downloaded from the
 #' \href{https://hfradar.ndbc.noaa.gov/}{
@@ -45,6 +45,7 @@
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = AB_zone)
 #' show_ridge_pca(fit)}
+#' @seealso \code{\link{ridge_pca}} for the toroidal PCA of this dataset.
 "santabarbara"
 
 
@@ -90,6 +91,7 @@
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = earthquakes)
 #' show_ridge_pca(fit)}
+#' @seealso \code{\link{ridge_pca}} for the toroidal PCA of this dataset.
 "earthquakes"
 
 
@@ -102,11 +104,11 @@
 #' @format A data frame with 30 rows and 2 variables:
 #' \describe{
 #'   \item{theta1}{Direction at 6:00 am.}
-#'   \item{theta2}{Direction at 12:00 noon.}
+#'   \item{theta2}{Direction at 7:00 am.}
 #' }
 #' @details
 #' The direction is measured in radians in \eqn{[-\pi, \pi)} with
-#' \eqn{-\pi}/\eqn{-\frac{-\pi}{2}}/\eqn{0}/\eqn{-\frac{\pi}{2}}/\eqn{\pi}
+#' \eqn{-\pi}/\eqn{-\frac{\pi}{2}}/\eqn{0}/\eqn{\frac{\pi}{2}}/\eqn{\pi}
 #' representing the East/South/West/North/East directions.
 #' @references
 #' Johnson, R. A. and Wehrly, T. (1977). Measures and models for angular
@@ -124,4 +126,5 @@
 #' # Perform TR-PCA
 #' fit <- ridge_pca(x = wind)
 #' show_ridge_pca(fit)}
+#' @seealso \code{\link{ridge_pca}} for the toroidal PCA of this dataset.
 "wind"
