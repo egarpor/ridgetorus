@@ -31,7 +31,7 @@ max_score_2(
 to \code{c(0, 0)}.}
 
 \item{coefs}{list of coefficients \code{cos_a} (\eqn{a_k}) and
-\code{sin_b} (\eqn{b_k} giving the Fourier fit of the ridge curve.
+\code{sin_b} (\eqn{b_k}) giving the Fourier fit of the ridge curve.
 Defaults to \code{list(cos_a = c(0, 0), sin_b = 0)}. See examples.}
 
 \item{ind_var}{index \eqn{j} of the variable that parametrizes the ridge.
@@ -47,7 +47,7 @@ to \code{TRUE}.}
 \eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not
 recommended to use.}
 
-\item{L}{grid along he variable \code{ind_var} used for searching the
+\item{L}{grid along the variable \code{ind_var} used for searching the
 maximum allowed second score. Defaults to \code{25}.}
 
 \item{f}{factor for shrinking the grid on the variable that is different to
@@ -131,4 +131,9 @@ for (j in 1:2) {
 
 }
 par(old_par)
+}
+\seealso{
+\code{\link{ridge_curve}} for the fitted ridge, \code{\link{frechet}}
+for the variance decomposition of the scores, and \code{\link{ridge_pca}}
+for the full toroidal PCA.
 }

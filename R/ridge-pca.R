@@ -64,6 +64,10 @@
 #' x <- r_bwc(n = n, mu = c(1, 2), xi = c(0.5, 0.2, 0))
 #' fit <- ridge_pca(x = x, type = "bwc")
 #' show_ridge_pca(fit = fit, col_data = "red")}
+#' @seealso \code{\link{ridge_curve}}, \code{\link{ridge_scores}}, and
+#' \code{\link{ridge_fourier_fit}} for the ridge-fitting building blocks;
+#' \code{\link{ridge_bvm}} for the density ridge; \code{\link{biv_lrt}} for the
+#' sticky-fit tests; and \code{\link{show_ridge_pca}} to visualize the result.
 #' @export
 ridge_pca <- function(x, type = c("auto", "bvm", "bwc")[1], N = 5e2, K = 15,
                       scale = TRUE, lrts = TRUE, alpha = 0.05, at2 = TRUE,
@@ -108,7 +112,7 @@ ridge_pca <- function(x, type = c("auto", "bvm", "bwc")[1], N = 5e2, K = 15,
   }
   if (!is.logical(lrts)) {
 
-    stop("hom must be a logical value: TRUE or FALSE.")
+    stop("lrts must be a logical value: TRUE or FALSE.")
 
   }
   if (!is.logical(at2)) {

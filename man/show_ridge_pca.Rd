@@ -70,3 +70,7 @@ show_ridge_pca(fit = fit, col_data = col, at2 = FALSE)
 fit2 <- ridge_pca(x = x, at2 = TRUE)
 show_ridge_pca(fit = fit2, col_data = col, at2 = TRUE)}
 }
+\seealso{
+\code{\link{ridge_pca}} to compute \code{fit} and
+\code{\link{torus_pairs}} for a pairs plot of the scores.
+}

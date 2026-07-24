@@ -51,3 +51,24 @@ test_that("Recover parameters via MLE", {
                rep(0, 6), tolerance = 0.2)
 
 })
+
+test_that("d_bwn matches a direct wrapped-normal lattice sum", {
+
+  # Independent reference implementation locks the vectorized d_bwn
+  mu <- c(0.3, -0.4)
+  Sigma <- rbind(c(1.2, 0.4), c(0.4, 0.8))
+  pts <- rbind(c(0, 0), c(1, -1), c(2.5, 2), c(-3, 1.5))
+  ref <- apply(pts, 1, function(p) {
+    th <- sdetorus::toPiInt(p - mu)
+    s <- 0
+    for (a in -2:2) {
+      for (b in -2:2) {
+        s <- s + mvtnorm::dmvnorm(c(th[1] + 2 * pi * a, th[2] + 2 * pi * b),
+                                  sigma = Sigma)
+      }
+    }
+    s
+  })
+  expect_equal(d_bwn(pts, mu = mu, Sigma = Sigma), ref, tolerance = 1e-12)
+
+})

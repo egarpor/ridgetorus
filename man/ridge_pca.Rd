@@ -100,3 +100,9 @@ x <- r_bwc(n = n, mu = c(1, 2), xi = c(0.5, 0.2, 0))
 fit <- ridge_pca(x = x, type = "bwc")
 show_ridge_pca(fit = fit, col_data = "red")}
 }
+\seealso{
+\code{\link{ridge_curve}}, \code{\link{ridge_scores}}, and
+\code{\link{ridge_fourier_fit}} for the ridge-fitting building blocks;
+\code{\link{ridge_bvm}} for the density ridge; \code{\link{biv_lrt}} for the
+sticky-fit tests; and \code{\link{show_ridge_pca}} to visualize the result.
+}

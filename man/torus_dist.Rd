@@ -10,7 +10,7 @@ torus_dist(x, y, squared = FALSE)
 \item{x}{a matrix of size \code{c(nx, d)} with angles on \eqn{[-\pi, \pi)}.}
 
 \item{y}{either a matrix with the same size as \code{x} or a vector of
-size \code{nx}.}
+length \code{ncol(x)}.}
 
 \item{squared}{return the squared distance? Defaults to \code{FALSE}.}
 }
@@ -42,4 +42,8 @@ for (i in 1:n) {
 
 }
 text(x = x, labels = sprintf("\%.2f", torus_dist(x, y)), col = col, pos = 1)
+}
+\seealso{
+\code{\link{frechet}} for Fréchet means and variances built on this
+distance.
 }

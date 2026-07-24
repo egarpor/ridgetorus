@@ -35,7 +35,7 @@ distribution).}
 hypothesis.}
 \item{method}{description of the type of test performed.}
 \item{df}{degrees of freedom.}
-\item{data.name}{a character string giving the name of \code{theta}.}
+\item{data.name}{a character string giving the name of \code{x}.}
 \item{fit_mle}{maximum likelihood fit.}
 \item{fit_null}{maximum likelihood fit under the null hypothesis.}
 }
@@ -111,4 +111,9 @@ on the torus. \emph{Biometrika}, 102(2):359--370. \doi{10.1093/biomet/asv003}
 Singh, H., Hnizdo, V., and Demchuk, E. (2002). Probabilistic model for two
 dependent circular variables. \emph{Biometrika}, 89(3):719--723.
 \doi{10.1093/biomet/89.3.719}
+}
+\seealso{
+\code{\link{fit_bvm_mle}} and \code{\link{fit_bwc_mle}} for the
+fits compared by the tests, and \code{\link{ridge_pca}}, which uses these
+tests to enforce the sticky horizontal/vertical/diagonal ridges.
 }

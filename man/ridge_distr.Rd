@@ -86,3 +86,8 @@ Ozertem, U. and Erdogmus, D. (2011). Locally defined principal curves and
 surfaces. \emph{Journal of Machine Learning Research}, 12(34):1249--1286.
 \doi{10.6083/M4ZG6Q60}
 }
+\seealso{
+\code{\link{ridge_fourier_fit}} and \code{\link{ridge_curve}} to
+turn the ridge into a Fourier curve, and \code{\link{ridge_pca}} for the
+full toroidal PCA.
+}

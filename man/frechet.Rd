@@ -68,3 +68,8 @@ sum(f$var)
 # Cumulative proportion of variances
 frechet_ss(x)
 }
+\seealso{
+\code{\link{torus_dist}} for the underlying toroidal distance, and
+\code{\link{ridge_scores}}, whose explained variance is computed with
+\code{frechet_ss}.
+}

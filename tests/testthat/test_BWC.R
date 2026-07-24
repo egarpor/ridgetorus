@@ -65,17 +65,17 @@ test_that("Recover parameters via MM", {
   fit6 <- unname(unlist(fit_bwc_mm(samp6)))
 
   expect_equal(c(torus_dist(x = rbind(fit1[1:2]), y = rbind(mu1[1:2])),
-                 fit1[3:5] - xi1), rep(0, 4), tolerance = 0.5)
+                 fit1[3:5] - xi1), rep(0, 4), tolerance = 0.2)
   expect_equal(c(torus_dist(x = rbind(fit2[1:2]), y = rbind(mu2[1:2])),
-                 fit2[3:5] - xi2), rep(0, 4), tolerance = 0.5)
+                 fit2[3:5] - xi2), rep(0, 4), tolerance = 0.2)
   expect_equal(c(torus_dist(x = rbind(fit3[1:2]), y = rbind(mu3[1:2])),
-                 fit3[3:5] - xi3), rep(0, 4), tolerance = 0.5)
+                 fit3[3:5] - xi3), rep(0, 4), tolerance = 0.2)
   expect_equal(c(torus_dist(x = rbind(fit4[1:2]), y = rbind(mu4[1:2])),
-                 fit4[3:5] - xi4), rep(0, 4), tolerance = 0.5)
+                 fit4[3:5] - xi4), rep(0, 4), tolerance = 0.2)
   expect_equal(c(torus_dist(x = rbind(fit5[1:2]), y = rbind(mu5[1:2])),
-                 fit5[3:5] - xi5), rep(0, 4), tolerance = 0.5)
+                 fit5[3:5] - xi5), rep(0, 4), tolerance = 0.2)
   expect_equal(c(torus_dist(x = rbind(fit6[1:2]), y = rbind(mu6[1:2])),
-                 fit6[3:5] - xi6), rep(0, 4), tolerance = 0.5)
+                 fit6[3:5] - xi6), rep(0, 4), tolerance = 0.2)
 
 })
 

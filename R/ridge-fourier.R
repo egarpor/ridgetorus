@@ -50,6 +50,9 @@
 #' plot(ridge, xlim = c(-pi, pi), ylim = c(-pi, pi))
 #' coefs <- ridge_fourier_fit(ridge)
 #' points(ridge_curve(th, mu = mu, coefs = coefs), col = 4, cex = 0.5)}
+#' @seealso \code{\link{ridge_curve}} to evaluate the fitted curve,
+#' \code{\link{ridge_bvm}} for the ridge to fit, and \code{\link{ridge_pca}}
+#' for the full toroidal PCA.
 #' @export
 ridge_fourier_fit <- function(curve, K = 15, norm_prop = 1, N = 1280,
                               at2 = TRUE) {
@@ -58,13 +61,12 @@ ridge_fourier_fit <- function(curve, K = 15, norm_prop = 1, N = 1280,
   nodes <- drop(sphunif::Gauss_Legen_nodes(a = -pi, b = pi, N = N))
   w <- drop(sphunif::Gauss_Legen_weights(a = -pi, b = pi, N = N))
 
-  # Find the closest point of the curve to each node and save its y value
-  y <- rep(0, length = N)
-  for (i in 1:N) {
-
-    y[i] <- curve[which.min(abs(curve[, 1] - nodes[i])), 2]
-
-  }
+  # Find the closest point of the curve (in the first coordinate) to each node
+  # and save its second coordinate. max.col() with ties.method = "first"
+  # reproduces which.min()'s first-match tie-breaking, fully vectorized.
+  idx <- max.col(-abs(outer(nodes, curve[, 1], FUN = "-")),
+                 ties.method = "first")
+  y <- curve[idx, 2]
 
   # Fourier atan2 or sine fit?
   if (at2) {

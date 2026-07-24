@@ -19,7 +19,7 @@ santabarbara
 \description{
 The Santa Barbara Channel is a coastal area in California. This
 dataset contains the sea currents in the four areas present in the
-data application in García-Portugués and Prieto-Tirado (2022). Precisely,
+data application in García-Portugués and Prieto-Tirado (2023). Precisely,
 it contains the 24-hour speed-weighted mean of the currents' direction in
 each of the four areas downloaded from the
 \href{https://hfradar.ndbc.noaa.gov/}{
@@ -54,5 +54,8 @@ Physical Oceanography}, 28(1):85--102.
 García-Portugués, E. and Prieto-Tirado, A. (2023). Toroidal PCA via density
 ridges. \emph{Statistics and Computing}, 33(5):107.
 \doi{10.1007/s11222-023-10273-9}
+}
+\seealso{
+\code{\link{ridge_pca}} for the toroidal PCA of this dataset.
 }
 \keyword{datasets}

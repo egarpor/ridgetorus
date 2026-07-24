@@ -4,6 +4,7 @@
 ^README.*$
 ^TODO$
 ^data-raw$
+^logo$
 ^application$
 ^experiments$
 ^videos$
@@ -15,3 +16,4 @@ pkg-devtools.R
 ^\.github$
 ^codecov\.yml$
 ^CRAN-SUBMISSION$
+ridgetorus\.code-workspace
