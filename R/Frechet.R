@@ -51,6 +51,9 @@
 #'
 #' # Cumulative proportion of variances
 #' frechet_ss(x)
+#' @seealso \code{\link{torus_dist}} for the underlying toroidal distance, and
+#' \code{\link{ridge_scores}}, whose explained variance is computed with
+#' \code{frechet_ss}.
 #' @name frechet
 #' @rdname frechet
 #' @export
@@ -140,7 +143,7 @@ frechet_ss <- function(x, l = pi, N = 5e2, draw_plot = FALSE) {
 #'
 #' @param x a matrix of size \code{c(nx, d)} with angles on \eqn{[-\pi, \pi)}.
 #' @param y either a matrix with the same size as \code{x} or a vector of
-#' size \code{nx}.
+#' length \code{ncol(x)}.
 #' @param squared return the squared distance? Defaults to \code{FALSE}.
 #' @details
 #' The maximal distance on \eqn{[-\pi, \pi)^d} is \eqn{\sqrt{d}\pi}.
@@ -163,6 +166,8 @@ frechet_ss <- function(x, l = pi, N = 5e2, draw_plot = FALSE) {
 #'
 #' }
 #' text(x = x, labels = sprintf("%.2f", torus_dist(x, y)), col = col, pos = 1)
+#' @seealso \code{\link{frechet}} for Fréchet means and variances built on this
+#' distance.
 #' @export
 torus_dist <- function(x, y, squared = FALSE) {
 
