@@ -1,4 +1,4 @@
-# ridgetorus
+# ridgetorus <img src="man/figures/logo.png" align="right" height="139" alt="ridgetorus hexlogo"/>
 
 [![License:
 GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -23,7 +23,6 @@ status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)
 <!-- #   badger::badge_cran_download(pkg = NULL, type = "last-month") -->
 <!-- # ) -->
 <!-- # ``` -->
-<img src="man/figures/logo.png" alt="ridgetorus hexlogo" align="right" width="200" style="padding: 0 15px; float: right;"/>
 
 ## Overview
 
