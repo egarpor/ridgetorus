@@ -31,7 +31,7 @@
 #' hypothesis.}
 #' \item{method}{description of the type of test performed.}
 #' \item{df}{degrees of freedom.}
-#' \item{data.name}{a character string giving the name of \code{theta}.}
+#' \item{data.name}{a character string giving the name of \code{x}.}
 #' \item{fit_mle}{maximum likelihood fit.}
 #' \item{fit_null}{maximum likelihood fit under the null hypothesis.}
 #' @references
@@ -95,6 +95,9 @@
 #' samp_1 <- r_bwc(n = n, mu = mu, xi = xi_1)
 #' biv_lrt(x = samp_0, indep = TRUE, hom = TRUE, type = "bwc")
 #' biv_lrt(x = samp_1, indep = TRUE, hom = TRUE, type = "bwc")
+#' @seealso \code{\link{fit_bvm_mle}} and \code{\link{fit_bwc_mle}} for the
+#' fits compared by the tests, and \code{\link{ridge_pca}}, which uses these
+#' tests to enforce the sticky horizontal/vertical/diagonal ridges.
 #' @export
 biv_lrt <- function(x, hom = FALSE, indep = FALSE, fit_mle = NULL, type, ...) {
 

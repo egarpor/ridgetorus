@@ -17,6 +17,9 @@
 #'   \eqn{(\boldsymbol{\mu}, \boldsymbol{\Sigma})} and the object \code{opt}
 #'   containing the optimization summary.
 #' }
+#' @seealso \code{\link{bvm}} and \code{\link{bwc}} for the toroidal
+#' distributions used by \code{\link{ridge_pca}}, and \code{\link{ridge_bwn}}
+#' for the density ridge of this model.
 #' @examples
 #' ## Density evaluation
 #'
@@ -40,21 +43,18 @@ d_bwn <- function(x, mu, Sigma, kmax = 2) {
   th1 <- sdetorus::toPiInt(x[, 1] - mu[1])
   th2 <- sdetorus::toPiInt(x[, 2] - mu[2])
 
-  # Wrapping
-  d <- numeric(length = nrow(x))
+  # Wrapping: evaluate all (2 * kmax + 1)^2 lattice translations with a single
+  # dmvnorm() call over the stacked shifted points, then sum the contributions
+  # for each observation
+  nx <- nrow(x)
   k <- seq.int(-kmax, kmax)
-  two_pi <- 2 * pi
-  for (i in seq_along(k)) {
-    for (j in seq_along(k)) {
-
-      trans1 <- two_pi * k[i]
-      trans2 <- two_pi * k[j]
-      d <- d + mvtnorm::dmvnorm(x = cbind(th1 + trans1, th2 + trans2),
-                                sigma = Sigma)
-
-    }
-  }
-  return(d)
+  trans <- 2 * pi * as.matrix(expand.grid(k, k))
+  nt <- nrow(trans)
+  shifted <- cbind(rep(th1, times = nt) + rep(trans[, 1], each = nx),
+                   rep(th2, times = nt) + rep(trans[, 2], each = nx))
+  dens <- matrix(mvtnorm::dmvnorm(x = shifted, sigma = Sigma),
+                 nrow = nx, ncol = nt)
+  return(rowSums(dens))
 
 }
 
@@ -85,7 +85,7 @@ r_bwn <- function(n, mu, Sigma) {
 #'
 #' n <- 100
 #' samp <- r_bwn(n = 100, mu = mu, Sigma = Sigma)
-#' (param_mle <- fit_bwn_mle(samp)$par)
+#' (param_mle <- fit_bwn_mle(samp)$opt$par)
 #' @rdname bwn
 #' @export
 fit_bwn_mle <- function(x, kmax = 2, lower = c(-pi, -pi, 1e-3, 1e-3, -1),
@@ -113,6 +113,7 @@ fit_bwn_mle <- function(x, kmax = 2, lower = c(-pi, -pi, 1e-3, 1e-3, -1),
 
   return(list(mu = opt$par[1:2], Sigma = matrix(c(opt$par[3], opt$par[5],
                                                   opt$par[5], opt$par[4]),
-                                                ncol = 2, nrow = 2)))
+                                                ncol = 2, nrow = 2),
+              opt = opt))
 
 }

@@ -12,7 +12,7 @@
 #' (the default), the first \code{max_dim} variables are plotted.
 #' @param col_data color(s) for the data points. Defaults to \code{1}.
 #' @param ylim_dens common \code{ylim} for the diagonal plots. Defaults to
-#' \code{c(0, 1)}.
+#' \code{c(0, 1.5)}.
 #' @param bwd type of bandwidth selector used in the kernel density plots.
 #' Either \code{"ROT"}, \code{"EMI"}, \code{"AMI"}, \code{"LSCV"}, or
 #' \code{"LCV"}. See \code{\link[DirStats:bw_dir_pi]{bw_dir_pi}} and
@@ -48,6 +48,8 @@
 #' \donttest{
 #' fit <- ridge_pca(x = x)
 #' torus_pairs(fit$scores, col_data = col)}
+#' @seealso \code{\link{ridge_pca}} to obtain the scores and
+#' \code{\link{show_ridge_pca}} to visualize a fitted ridge.
 #' @export
 torus_pairs <- function(x, max_dim = 10, columns = NULL, col_data = 1,
                         ylim_dens = c(0, 1.5), bwd = "ROT",
@@ -216,6 +218,8 @@ torus_pairs <- function(x, max_dim = 10, columns = NULL, col_data = 1,
 #' show_ridge_pca(fit = fit, col_data = col, at2 = FALSE)
 #' fit2 <- ridge_pca(x = x, at2 = TRUE)
 #' show_ridge_pca(fit = fit2, col_data = col, at2 = TRUE)}
+#' @seealso \code{\link{ridge_pca}} to compute \code{fit} and
+#' \code{\link{torus_pairs}} for a pairs plot of the scores.
 #' @export
 show_ridge_pca <- function(fit, n_max = 500, projs = TRUE, projs_lines = TRUE,
                            signs = TRUE, col_data = 1, col_projs = c(3, 4),
