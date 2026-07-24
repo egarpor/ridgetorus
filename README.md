@@ -11,30 +11,6 @@ status](https://github.com/egarpor/ridgetorus/workflows/test-coverage/badge.svg)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
 [![](http://cranlogs.r-pkg.org/badges/last-month/ridgetorus)](https://cran.r-project.org/package=ridgetorus)
 
-<!-- # ```{r, badges, echo = FALSE, results = 'asis'} -->
-
-<!-- # cat( -->
-
-<!-- #   badger::badge_license(license = "GPLv3", color = "blue", -->
-
-<!-- #                         url = "https://www.gnu.org/licenses/gpl-3.0"), -->
-
-<!-- #   badger::badge_github_actions(action = "R-CMD-check"), -->
-
-<!-- #   badger::badge_github_actions(action = "test-coverage"), -->
-
-<!-- #   badger::badge_codecov(ref = NULL), -->
-
-<!-- #   badger::badge_cran_release(color = "green"), -->
-
-<!-- #   badger::badge_cran_download(pkg = NULL, type = "grand-total"), -->
-
-<!-- #   badger::badge_cran_download(pkg = NULL, type = "last-month") -->
-
-<!-- # ) -->
-
-<!-- # ``` -->
-
 ## Overview
 
 Implementation of principal component analysis on the two-dimensional
