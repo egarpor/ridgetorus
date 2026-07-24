@@ -7,10 +7,11 @@
 torus_dist(x, y, squared = FALSE)
 }
 \arguments{
-\item{x}{a matrix of size \code{c(nx, d)} with angles on \eqn{[-\pi, \pi)}.}
+\item{x}{a matrix of size \code{c(nx, d)} with angles on
+\eqn{\mathbb{T}=[-\pi, \pi)}.}
 
-\item{y}{either a matrix with the same size as \code{x} or a vector of
-length \code{ncol(x)}.}
+\item{y}{either a matrix with the same size as \code{x} or a vector of length
+\code{ncol(x)}.}
 
 \item{squared}{return the squared distance? Defaults to \code{FALSE}.}
 }
@@ -19,11 +20,11 @@ A vector of size \code{nx} with the distances between the
 observations of \code{x} and \code{y}.
 }
 \description{
-Computation of distances on \eqn{[-\pi, \pi)^d}, \eqn{d\geq 1},
-between two sets of observations.
+Computation of distances on \eqn{\mathbb{T}^d=[-\pi, \pi)^d},
+\eqn{d\geq 1}, between two sets of observations.
 }
 \details{
-The maximal distance on \eqn{[-\pi, \pi)^d} is \eqn{\sqrt{d}\pi}.
+The maximal distance on \eqn{\mathbb{T}^d=[-\pi, \pi)^d} is \eqn{\sqrt{d}\pi}.
 }
 \examples{
 # Illustration of torus distances

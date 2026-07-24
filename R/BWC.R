@@ -4,10 +4,10 @@
 #'
 #' @description Computation of the density of a bivariate wrapped Cauchy:
 #' \deqn{f(\theta_1, \theta_2)=c(\xi_1,\xi_2,\rho)\{c_0(\xi_1,\xi_2,\rho)-
-#' c_1(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1)-
-#' c_2(\xi_1,\xi_2,\rho)\cos (\theta_2-\mu_2)-\\
-#' c_3(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1) \cos (\theta_2-\mu_2)-
-#' c_4(\xi_1,\xi_2,\rho) \sin (\theta_1-\mu_1) \sin (\theta_2-\mu_2)\}^{-1}.}
+#' c_1(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1)- c_2(\xi_1,\xi_2,\rho)\cos
+#' (\theta_2-\mu_2)-\\ c_3(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1) \cos
+#' (\theta_2-\mu_2)- c_4(\xi_1,\xi_2,\rho) \sin (\theta_1-\mu_1) \sin
+#' (\theta_2-\mu_2)\}^{-1}.}
 #'
 #' @inheritParams bvm
 #' @param xi a vector of length \code{3} with the marginal concentrations
@@ -77,8 +77,7 @@ d_bwc <- function(x, mu, xi) {
 #' @description Simulation of samples from a bivariate wrapped Cauchy.
 #'
 #' @inheritParams r_bvm
-#' @author The original code for \code{r_bwc} was supplied by
-#' Arthur Pewsey.
+#' @author The original code for \code{r_bwc} was supplied by Arthur Pewsey.
 #' @rdname bwc
 #' @export
 r_bwc <- function(n, mu, xi) {
@@ -129,8 +128,8 @@ r_bwc <- function(n, mu, xi) {
 #'
 #' @inheritParams ridge_pca
 #' @param start a vector of length \code{5} with the initial values for the
-#' maximum likelihood optimizer. If \code{NULL} (default), the method of
-#' moments estimates are employed.
+#' maximum likelihood optimizer. If \code{NULL} (default), the method of moments
+#' estimates are employed.
 #' @param lower,upper vectors of length \code{5} with the bounds for the
 #' likelihood optimizer. Default to \code{c(-pi, -pi, 0, 0, -1 + 1e-3)} and
 #' \code{c(pi, pi, 1 - 1e-3, 1 - 1e-3, 1 - 1e-3)}.

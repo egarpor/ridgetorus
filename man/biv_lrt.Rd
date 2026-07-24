@@ -2,13 +2,13 @@
 % Please edit documentation in R/lrt.R
 \name{biv_lrt}
 \alias{biv_lrt}
-\title{Tests of homogeneity and independence in bivariate sine von
-Mises and wrapped Cauchy distributions}
+\title{Tests of homogeneity and independence in bivariate sine von Mises and
+wrapped Cauchy distributions}
 \usage{
 biv_lrt(x, hom = FALSE, indep = FALSE, fit_mle = NULL, type, ...)
 }
 \arguments{
-\item{x}{matrix of dimension  \code{c(n, 2)} containing the \code{n}
+\item{x}{matrix of dimension \code{c(n, 2)} containing the \code{n}
 observations of the pair of angles.}
 
 \item{hom}{test the homogeneity hypothesis? Defaults to \code{FALSE}.}
@@ -16,8 +16,8 @@ observations of the pair of angles.}
 \item{indep}{test the independence hypothesis? Defaults to \code{FALSE}.}
 
 \item{fit_mle}{output of \code{\link{fit_bvm_mle}} or
-\code{\link{fit_bwc_mle}} with \code{hom = FALSE}. Computed internally if
-not provided.}
+\code{\link{fit_bwc_mle}} with \code{hom = FALSE}. Computed internally if not
+provided.}
 
 \item{type}{either \code{"bvm"} (bivariate sine von Mises) or \code{"bwc"}
 (bivariate wrapped Cauchy).}
@@ -44,10 +44,9 @@ Performs the following likelihood ratio tests for the
 concentrations in bivariate sine von Mises and wrapped Cauchy distributions:
 (1) \emph{homogeneity}: \eqn{H_0:\kappa_1=\kappa_2} vs.
 \eqn{H_1:\kappa_1\neq\kappa_2}, and \eqn{H_0:\xi_1=\xi_2} vs.
-\eqn{H_1:\xi_1\neq\xi_2}, respectively;
-(2) \emph{independence}: \eqn{H_0:\lambda=0} vs.
-\eqn{H_1:\lambda\neq0}, and \eqn{H_0:\rho=0} vs. \eqn{H_1:\rho\neq0}.
-The tests (1) and (2) can be performed simultaneously.
+\eqn{H_1:\xi_1\neq\xi_2}, respectively; (2) \emph{independence}:
+\eqn{H_0:\lambda=0} vs. \eqn{H_1:\lambda\neq0}, and \eqn{H_0:\rho=0} vs.
+\eqn{H_1:\rho\neq0}. The tests (1) and (2) can be performed simultaneously.
 }
 \examples{
 ## Bivariate sine von Mises
@@ -113,7 +112,7 @@ dependent circular variables. \emph{Biometrika}, 89(3):719--723.
 \doi{10.1093/biomet/89.3.719}
 }
 \seealso{
-\code{\link{fit_bvm_mle}} and \code{\link{fit_bwc_mle}} for the
-fits compared by the tests, and \code{\link{ridge_pca}}, which uses these
-tests to enforce the sticky horizontal/vertical/diagonal ridges.
+\code{\link{fit_bvm_mle}} and \code{\link{fit_bwc_mle}} for the fits
+compared by the tests, and \code{\link{ridge_pca}}, which uses these tests to
+enforce the sticky horizontal/vertical/diagonal ridges.
 }

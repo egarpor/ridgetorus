@@ -12,7 +12,7 @@ the relevant density ridge for bivariate sine von Mises and bivariate wrapped
 Cauchy distribution models and provides the associated scores and variance
 decomposition. Auxiliary functions for evaluating, fitting, and sampling
 these models are also provided. The package provides replicability to
-García-Portugués and Prieto-Tirado (2023) <doi:10.1007/s11222-023-10273-9>.
+García-Portugués and Prieto-Tirado (2023) \doi{10.1007/s11222-023-10273-9}.
 }
 \references{
 García-Portugués, E. and Prieto-Tirado, A. (2023). Toroidal PCA via density

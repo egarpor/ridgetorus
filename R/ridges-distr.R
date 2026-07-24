@@ -249,7 +249,7 @@ filtering <- function(solution, quadrant, max_dist = 0.1) {
 #'
 #' @description Computation of the connected component of the density ridge of
 #' in a given set of points or, if not specified, in a regular grid on
-#' \eqn{[-\pi, \pi)}.
+#' \eqn{\mathbb{T}=[-\pi, \pi)}.
 #'
 #' @inheritParams bvm
 #' @inheritParams bwc
@@ -300,8 +300,8 @@ filtering <- function(solution, quadrant, max_dist = 0.1) {
 #'                    subint_2 = 5e2)
 #' points(ridge)}
 #' @seealso \code{\link{ridge_fourier_fit}} and \code{\link{ridge_curve}} to
-#' turn the ridge into a Fourier curve, and \code{\link{ridge_pca}} for the
-#' full toroidal PCA.
+#' turn the ridge into a Fourier curve, and \code{\link{ridge_pca}} for the full
+#' toroidal PCA.
 #' @export
 #' @name ridge_distr
 

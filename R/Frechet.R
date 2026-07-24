@@ -1,15 +1,15 @@
 
 #' @title Fréchet statistics on the torus
 #'
-#' @description Computes the Fréchet mean, variance, and standard deviation of
-#' a sample on the \eqn{d}-torus \eqn{[-l, l)^d}, \eqn{d\geq 1}, with
+#' @description Computes the Fréchet mean, variance, and standard deviation of a
+#' sample on the \eqn{d}-torus \eqn{[-l, l)^d}, \eqn{d\geq 1}, with
 #' \eqn{-l \equiv l} identified.
 #'
 #' @param x sample of angles on \eqn{[-l, l)}, a vector or a matrix.
 #' @param l half-period of the circular data. Can be a vector of length
 #' \code{ncol(x)} if \code{x} is a matrix. Defaults to \code{pi}.
-#' @param N size of the grid in \eqn{[-l, l)} for the exhaustive search of
-#' the mean. Defaults to \code{5e2}.
+#' @param N size of the grid in \eqn{[-l, l)} for the exhaustive search of the
+#' mean. Defaults to \code{5e2}.
 #' @param draw_plot draw a diagnostic plot showing the Fréchet loss function?
 #' Defaults to \code{FALSE}.
 #' @return
@@ -138,15 +138,16 @@ frechet_ss <- function(x, l = pi, N = 5e2, draw_plot = FALSE) {
 
 #' @title Toroidal distances
 #'
-#' @description Computation of distances on \eqn{[-\pi, \pi)^d}, \eqn{d\geq 1},
-#' between two sets of observations.
+#' @description Computation of distances on \eqn{\mathbb{T}^d=[-\pi, \pi)^d},
+#' \eqn{d\geq 1}, between two sets of observations.
 #'
-#' @param x a matrix of size \code{c(nx, d)} with angles on \eqn{[-\pi, \pi)}.
-#' @param y either a matrix with the same size as \code{x} or a vector of
-#' length \code{ncol(x)}.
+#' @param x a matrix of size \code{c(nx, d)} with angles on
+#' \eqn{\mathbb{T}=[-\pi, \pi)}.
+#' @param y either a matrix with the same size as \code{x} or a vector of length
+#' \code{ncol(x)}.
 #' @param squared return the squared distance? Defaults to \code{FALSE}.
 #' @details
-#' The maximal distance on \eqn{[-\pi, \pi)^d} is \eqn{\sqrt{d}\pi}.
+#' The maximal distance on \eqn{\mathbb{T}^d=[-\pi, \pi)^d} is \eqn{\sqrt{d}\pi}.
 #' @return A vector of size \code{nx} with the distances between the
 #' observations of \code{x} and \code{y}.
 #' @examples

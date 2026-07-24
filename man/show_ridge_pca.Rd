@@ -42,15 +42,15 @@ curve-projected data and the ridge curve, respectively. Defaults to
 Defaults to \code{5e2}.}
 
 \item{at2}{do the \code{atan2} fit instead of the sine fit (only using
-\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not
-recommended to use.}
+\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not recommended to
+use.}
 }
 \value{
 Nothing, the functions are called to produce plots.
 }
 \description{
 Shows the scores computation for PCA via density ridges on
-\eqn{[-\pi, \pi)^2}.
+\eqn{\mathbb{T}^2=[-\pi, \pi)^2}.
 }
 \examples{
 \donttest{

@@ -15,13 +15,14 @@ torus_pairs(
 )
 }
 \arguments{
-\item{x}{a matrix of size \code{c(nx, d)} with angles on \eqn{[-\pi, \pi)}.}
+\item{x}{a matrix of size \code{c(nx, d)} with angles on
+\eqn{\mathbb{T}=[-\pi, \pi)}.}
 
 \item{max_dim}{the maximum number of scores to produce the scores plot.
 Defaults to \code{10}.}
 
-\item{columns}{if specified, the variables to be plotted. If \code{NULL}
-(the default), the first \code{max_dim} variables are plotted.}
+\item{columns}{if specified, the variables to be plotted. If \code{NULL} (the
+default), the first \code{max_dim} variables are plotted.}
 
 \item{col_data}{color(s) for the data points. Defaults to \code{1}.}
 
@@ -41,9 +42,9 @@ A \code{\link[ggplot2:ggplot2]{ggplot}}. The density plots show the
 deviations (gray text).
 }
 \description{
-Pairs plots for data on \eqn{[-\pi, \pi)^d}, \eqn{d\geq 2}.
-The diagonal panels contain kernel density estimates tailored to
-circular data.
+Pairs plots for data on \eqn{\mathbb{T}^d=[-\pi, \pi)^d},
+\eqn{d\geq 2}. The diagonal panels contain kernel density estimates tailored
+to circular data.
 }
 \details{
 The default bandwidth selector is the Rule-Of-Thumb (ROT) selector in

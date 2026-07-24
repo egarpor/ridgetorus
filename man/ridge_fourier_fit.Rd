@@ -17,8 +17,8 @@ ridge_fourier_fit(curve, K = 15, norm_prop = 1, N = 1280, at2 = TRUE)
 \link[sphunif]{Gauss_Legen_nodes}. Defaults to \code{1280}.}
 
 \item{at2}{do the \code{atan2} fit instead of the sine fit (only using
-\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not
-recommended to use.}
+\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not recommended to
+use.}
 }
 \value{
 The coefficients of the fit (see \code{\link{ridge_curve}}). A list
@@ -27,8 +27,8 @@ with entries:
 \item{sin_b}{contains \eqn{b_1,\ldots,b_m}.}
 }
 \description{
-Computation of the Fourier expansion coefficients of a
-given curve.
+Computation of the Fourier expansion coefficients of a given
+curve.
 }
 \examples{
 \donttest{
@@ -67,6 +67,6 @@ points(ridge_curve(th, mu = mu, coefs = coefs), col = 4, cex = 0.5)}
 }
 \seealso{
 \code{\link{ridge_curve}} to evaluate the fitted curve,
-\code{\link{ridge_bvm}} for the ridge to fit, and \code{\link{ridge_pca}}
-for the full toroidal PCA.
+\code{\link{ridge_bvm}} for the ridge to fit, and \code{\link{ridge_pca}} for
+the full toroidal PCA.
 }

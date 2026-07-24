@@ -16,8 +16,8 @@ frechet_ss(x, l = pi, N = 500, draw_plot = FALSE)
 \item{l}{half-period of the circular data. Can be a vector of length
 \code{ncol(x)} if \code{x} is a matrix. Defaults to \code{pi}.}
 
-\item{N}{size of the grid in \eqn{[-l, l)} for the exhaustive search of
-the mean. Defaults to \code{5e2}.}
+\item{N}{size of the grid in \eqn{[-l, l)} for the exhaustive search of the
+mean. Defaults to \code{5e2}.}
 
 \item{draw_plot}{draw a diagnostic plot showing the Fréchet loss function?
 Defaults to \code{FALSE}.}
@@ -31,8 +31,8 @@ Defaults to \code{FALSE}.}
 }
 }
 \description{
-Computes the Fréchet mean, variance, and standard deviation of
-a sample on the \eqn{d}-torus \eqn{[-l, l)^d}, \eqn{d\geq 1}, with
+Computes the Fréchet mean, variance, and standard deviation of a
+sample on the \eqn{d}-torus \eqn{[-l, l)^d}, \eqn{d\geq 1}, with
 \eqn{-l \equiv l} identified.
 }
 \examples{

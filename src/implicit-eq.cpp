@@ -18,7 +18,7 @@ Rcpp::List grad_hess_mwn(arma::mat theta, arma::vec mu, arma::mat Sigma,
 //'
 //' @description One of the conditions for the density ridge of a given density
 //' \eqn{f} is that the modulus of its projected gradient is zero:
-//' \eqn{\|\mathrm{D}_{p-1}f(\mathbf{x})\|=0}. This function computes the
+//' \eqn{\|\mathrm{D}_{p-1}f(\boldsymbol{x})\|=0}. This function computes the
 //' LHS of that implicit equation for the case of a given density.
 //'
 //' @param theta1,theta2 evaluation points.

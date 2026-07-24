@@ -45,8 +45,8 @@ is evaluated.}
 \item{mu}{circular means of the density, a vector of length \code{2}.}
 
 \item{kappa}{vector of length \code{3} with the concentrations
-\eqn{(\kappa_1, \kappa_2)} and the dependence parameter \eqn{\lambda}
-of the density.}
+\eqn{(\kappa_1, \kappa_2)} and the dependence parameter \eqn{\lambda} of the
+density.}
 
 \item{log_const}{logarithm of the normalizing constant. Computed internally
 if \code{NULL} (default).}
@@ -54,8 +54,8 @@ if \code{NULL} (default).}
 \item{M}{truncation of the series expansion for computing the normalizing
 constant. Defaults to \code{25}.}
 
-\item{MC}{Monte Carlo replicates for computing the normalizing
-constant when there is no series expansion. Defaults to \code{1e4}.}
+\item{MC}{Monte Carlo replicates for computing the normalizing constant when
+there is no series expansion. Defaults to \code{1e4}.}
 
 \item{n}{sample size.}
 
@@ -94,10 +94,9 @@ concentrations? Defaults to \code{FALSE}.}
 \description{
 Computation of the density and normalizing constant
 \eqn{T(\kappa_1, \kappa_2, \lambda)} of the bivariate sine von Mises
-\deqn{f(\theta_1, \theta_2)= T(\kappa_1, \kappa_2, \lambda)
-\exp\{\kappa_1 \cos(\theta_1-\mu_1) +
-\kappa_2 \cos(\theta_2-\mu_2) +
-\lambda \sin(\theta_1-\mu_1) \sin(\theta_2-\mu_2)\}.}
+\deqn{f(\theta_1, \theta_2)= T(\kappa_1, \kappa_2, \lambda) \exp\{\kappa_1
+\cos(\theta_1-\mu_1) + \kappa_2 \cos(\theta_2-\mu_2) + \lambda
+\sin(\theta_1-\mu_1) \sin(\theta_2-\mu_2)\}.}
 
 Simulation of samples from a bivariate sine von Mises.
 

@@ -18,8 +18,8 @@ ridge_bwn(mu, Sigma, kmax = 2, eval_points, subint_1, subint_2)
 \item{mu}{circular means of the density, a vector of length \code{2}.}
 
 \item{kappa}{vector of length \code{3} with the concentrations
-\eqn{(\kappa_1, \kappa_2)} and the dependence parameter \eqn{\lambda}
-of the density.}
+\eqn{(\kappa_1, \kappa_2)} and the dependence parameter \eqn{\lambda} of the
+density.}
 
 \item{eval_points}{evaluation points for the ridge.}
 
@@ -42,7 +42,7 @@ A matrix of size \code{c(subint_1, 2)} containing the points of the
 \description{
 Computation of the connected component of the density ridge of
 in a given set of points or, if not specified, in a regular grid on
-\eqn{[-\pi, \pi)}.
+\eqn{\mathbb{T}=[-\pi, \pi)}.
 }
 \examples{
 \donttest{
@@ -88,6 +88,6 @@ surfaces. \emph{Journal of Machine Learning Research}, 12(34):1249--1286.
 }
 \seealso{
 \code{\link{ridge_fourier_fit}} and \code{\link{ridge_curve}} to
-turn the ridge into a Fourier curve, and \code{\link{ridge_pca}} for the
-full toroidal PCA.
+turn the ridge into a Fourier curve, and \code{\link{ridge_pca}} for the full
+toroidal PCA.
 }

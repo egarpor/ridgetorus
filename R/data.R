@@ -21,7 +21,7 @@
 #' @details
 #' The selection of these four areas is motivated by previous studies on the
 #' Santa Barbara currents, like Auad et al. (1998). The direction is measured
-#' in radians in \eqn{[-\pi, \pi)} with \eqn{-\pi} / \eqn{-\frac{\pi}{2}} /
+#' in radians in \eqn{\mathbb{T}=[-\pi, \pi)} with \eqn{-\pi} / \eqn{-\frac{\pi}{2}} /
 #' \eqn{0} / \eqn{\frac{\pi}{2}} / \eqn{\pi} representing the
 #' East / South / West / North / East directions. The script performing the data
 #' preprocessing is available at
@@ -107,7 +107,7 @@
 #'   \item{theta2}{Direction at 7:00 am.}
 #' }
 #' @details
-#' The direction is measured in radians in \eqn{[-\pi, \pi)} with
+#' The direction is measured in radians in \eqn{\mathbb{T}=[-\pi, \pi)} with
 #' \eqn{-\pi}/\eqn{-\frac{\pi}{2}}/\eqn{0}/\eqn{\frac{\pi}{2}}/\eqn{\pi}
 #' representing the East/South/West/North/East directions.
 #' @references

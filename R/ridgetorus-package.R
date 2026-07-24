@@ -8,7 +8,7 @@
 #' Cauchy distribution models and provides the associated scores and variance
 #' decomposition. Auxiliary functions for evaluating, fitting, and sampling
 #' these models are also provided. The package provides replicability to
-#' García-Portugués and Prieto-Tirado (2023) <doi:10.1007/s11222-023-10273-9>.
+#' García-Portugués and Prieto-Tirado (2023) \doi{10.1007/s11222-023-10273-9}.
 #'
 #' @author Eduardo García-Portugués and Arturo Prieto-Tirado.
 #' @references

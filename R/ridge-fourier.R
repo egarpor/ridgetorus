@@ -1,8 +1,8 @@
 
 #' @title Fourier expansion of a given curve
 #'
-#' @description Computation of the Fourier expansion coefficients of a
-#' given curve.
+#' @description Computation of the Fourier expansion coefficients of a given
+#' curve.
 #'
 #' @param curve points of the curve.
 #' @param norm_prop percentage of explained norm. Defaults to \code{1}.
@@ -10,8 +10,8 @@
 #' \link[sphunif]{Gauss_Legen_nodes}. Defaults to \code{1280}.
 #' @param K number of terms in the Fourier expansion. Defaults to \code{15}.
 #' @param at2 do the \code{atan2} fit instead of the sine fit (only using
-#' \eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not
-#' recommended to use.
+#' \eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not recommended to
+#' use.
 #' @return The coefficients of the fit (see \code{\link{ridge_curve}}). A list
 #' with entries:
 #' \item{cos_a}{contains \eqn{a_0,a_1,\ldots,a_m}.}
@@ -51,8 +51,8 @@
 #' coefs <- ridge_fourier_fit(ridge)
 #' points(ridge_curve(th, mu = mu, coefs = coefs), col = 4, cex = 0.5)}
 #' @seealso \code{\link{ridge_curve}} to evaluate the fitted curve,
-#' \code{\link{ridge_bvm}} for the ridge to fit, and \code{\link{ridge_pca}}
-#' for the full toroidal PCA.
+#' \code{\link{ridge_bvm}} for the ridge to fit, and \code{\link{ridge_pca}} for
+#' the full toroidal PCA.
 #' @export
 ridge_fourier_fit <- function(curve, K = 15, norm_prop = 1, N = 1280,
                               at2 = TRUE) {

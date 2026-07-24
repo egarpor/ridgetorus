@@ -1,13 +1,13 @@
 
 #' @title Toroidal PCA via density ridges
 #'
-#' @description This function computes the whole process of toroidal PCA
-#' via density ridges on a given sample: parameter estimation of the
-#' underlying distribution, estimation of the connected component of the ridge,
-#' and determination of its Fourier expansion from which to obtain the first
-#' and second scores.
+#' @description This function computes the whole process of toroidal PCA via
+#' density ridges on a given sample: parameter estimation of the underlying
+#' distribution, estimation of the connected component of the ridge, and
+#' determination of its Fourier expansion from which to obtain the first and
+#' second scores.
 #'
-#' @param x matrix of dimension  \code{c(n, 2)} containing the \code{n}
+#' @param x matrix of dimension \code{c(n, 2)} containing the \code{n}
 #' observations of the pair of angles.
 #' @param type either \code{"bvm"} (bivariate sine von Mises), \code{"bwc"}
 #' (bivariate wrapped Cauchy), or \code{"auto"} (default). \code{"auto"}

@@ -14,7 +14,7 @@ using namespace std;
 //' density factor.
 //'
 //' @param theta a matrix of size \code{c(nx, d)} with angles on
-//' \eqn{[-\pi, \pi)}.
+//' \eqn{\mathbb{T}=[-\pi, \pi)}.
 //' @param kappa vector with the \eqn{d} concentration parameters
 //' \eqn{\boldsymbol{\kappa} = (\kappa_1, \ldots, \kappa_d)'}.
 //' @param Lambda dependence matrix \eqn{\boldsymbol{\Lambda}}.
@@ -73,8 +73,8 @@ Rcpp::List grad_hess_mvm(arma::mat theta, arma::vec kappa, arma::mat Lambda) {
 //' @inheritParams grad_hess_mvm
 //' @param mu vector of length \code{d} with the mean of the normal
 //' distribution.
-//' @param Sigma matrix of size \code{c(d, d)} with the covariance matrix of
-//' the normal distribution.
+//' @param Sigma matrix of size \code{c(d, d)} with the covariance matrix of the
+//' normal distribution.
 //' @param k integer values for the wrapped normal truncation.
 //' @return A list:
 //' \item{grad}{unnormalized gradient, a matrix of size \code{c(nx, d)}.}

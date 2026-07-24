@@ -1,22 +1,21 @@
 
-#' @title Tests of homogeneity and independence in bivariate sine von
-#' Mises and wrapped Cauchy distributions
+#' @title Tests of homogeneity and independence in bivariate sine von Mises and
+#' wrapped Cauchy distributions
 #'
 #' @description Performs the following likelihood ratio tests for the
 #' concentrations in bivariate sine von Mises and wrapped Cauchy distributions:
 #' (1) \emph{homogeneity}: \eqn{H_0:\kappa_1=\kappa_2} vs.
 #' \eqn{H_1:\kappa_1\neq\kappa_2}, and \eqn{H_0:\xi_1=\xi_2} vs.
-#' \eqn{H_1:\xi_1\neq\xi_2}, respectively;
-#' (2) \emph{independence}: \eqn{H_0:\lambda=0} vs.
-#' \eqn{H_1:\lambda\neq0}, and \eqn{H_0:\rho=0} vs. \eqn{H_1:\rho\neq0}.
-#' The tests (1) and (2) can be performed simultaneously.
+#' \eqn{H_1:\xi_1\neq\xi_2}, respectively; (2) \emph{independence}:
+#' \eqn{H_0:\lambda=0} vs. \eqn{H_1:\lambda\neq0}, and \eqn{H_0:\rho=0} vs.
+#' \eqn{H_1:\rho\neq0}. The tests (1) and (2) can be performed simultaneously.
 #'
 #' @inheritParams bwc
 #' @param hom test the homogeneity hypothesis? Defaults to \code{FALSE}.
 #' @param indep test the independence hypothesis? Defaults to \code{FALSE}.
 #' @param fit_mle output of \code{\link{fit_bvm_mle}} or
-#' \code{\link{fit_bwc_mle}} with \code{hom = FALSE}. Computed internally if
-#' not provided.
+#' \code{\link{fit_bwc_mle}} with \code{hom = FALSE}. Computed internally if not
+#' provided.
 #' @param type either \code{"bvm"} (bivariate sine von Mises) or \code{"bwc"}
 #' (bivariate wrapped Cauchy).
 #' @inheritParams ridge_pca
@@ -95,9 +94,9 @@
 #' samp_1 <- r_bwc(n = n, mu = mu, xi = xi_1)
 #' biv_lrt(x = samp_0, indep = TRUE, hom = TRUE, type = "bwc")
 #' biv_lrt(x = samp_1, indep = TRUE, hom = TRUE, type = "bwc")
-#' @seealso \code{\link{fit_bvm_mle}} and \code{\link{fit_bwc_mle}} for the
-#' fits compared by the tests, and \code{\link{ridge_pca}}, which uses these
-#' tests to enforce the sticky horizontal/vertical/diagonal ridges.
+#' @seealso \code{\link{fit_bvm_mle}} and \code{\link{fit_bwc_mle}} for the fits
+#' compared by the tests, and \code{\link{ridge_pca}}, which uses these tests to
+#' enforce the sticky horizontal/vertical/diagonal ridges.
 #' @export
 biv_lrt <- function(x, hom = FALSE, indep = FALSE, fit_mle = NULL, type, ...) {
 

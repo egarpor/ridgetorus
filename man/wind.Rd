@@ -19,7 +19,7 @@ Wind direction at 6:00 and 7:00 from June 1, 2003 to June 30,
 2003, in radians, measured at a weather station in Texas coded as C28-1.
 }
 \details{
-The direction is measured in radians in \eqn{[-\pi, \pi)} with
+The direction is measured in radians in \eqn{\mathbb{T}=[-\pi, \pi)} with
 \eqn{-\pi}/\eqn{-\frac{\pi}{2}}/\eqn{0}/\eqn{\frac{\pi}{2}}/\eqn{\pi}
 representing the East/South/West/North/East directions.
 }

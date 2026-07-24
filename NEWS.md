@@ -24,3 +24,7 @@
 * `fit_bwn_mle()` now also returns the optimization object `opt`.
 * Fix `ridge_pca()`'s validation message for `lrts`.
 * Documentation fixes and new `@seealso` cross-references between the package functions.
+
+# ridgetorus 1.1.1
+
+* Cleaner equations in the documentation.

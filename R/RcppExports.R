@@ -8,7 +8,7 @@
 #' density factor.
 #'
 #' @param theta a matrix of size \code{c(nx, d)} with angles on
-#' \eqn{[-\pi, \pi)}.
+#' \eqn{\mathbb{T}=[-\pi, \pi)}.
 #' @param kappa vector with the \eqn{d} concentration parameters
 #' \eqn{\boldsymbol{\kappa} = (\kappa_1, \ldots, \kappa_d)'}.
 #' @param Lambda dependence matrix \eqn{\boldsymbol{\Lambda}}.
@@ -34,8 +34,8 @@ grad_hess_mvm <- function(theta, kappa, Lambda) {
 #' @inheritParams grad_hess_mvm
 #' @param mu vector of length \code{d} with the mean of the normal
 #' distribution.
-#' @param Sigma matrix of size \code{c(d, d)} with the covariance matrix of
-#' the normal distribution.
+#' @param Sigma matrix of size \code{c(d, d)} with the covariance matrix of the
+#' normal distribution.
 #' @param k integer values for the wrapped normal truncation.
 #' @return A list:
 #' \item{grad}{unnormalized gradient, a matrix of size \code{c(nx, d)}.}
@@ -68,7 +68,7 @@ grad_hess_bwc <- function(theta2, theta1, xi) {
 #'
 #' @description One of the conditions for the density ridge of a given density
 #' \eqn{f} is that the modulus of its projected gradient is zero:
-#' \eqn{\|\mathrm{D}_{p-1}f(\mathbf{x})\|=0}. This function computes the
+#' \eqn{\|\mathrm{D}_{p-1}f(\boldsymbol{x})\|=0}. This function computes the
 #' LHS of that implicit equation for the case of a given density.
 #'
 #' @param theta1,theta2 evaluation points.

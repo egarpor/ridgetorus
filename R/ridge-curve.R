@@ -1,29 +1,29 @@
 
 #' @title Fourier-fitted ridge curve and related utilities
 #'
-#' @description Given the angles \code{theta} in \eqn{[-\pi, \pi)},
+#' @description Given the angles \code{theta} in \eqn{\mathbb{T}=[-\pi, \pi)},
 #' \code{ridge_curve} computes the Fourier-fitted ridge curve
 #' \eqn{(\theta, r_1(\theta))} or \eqn{(r_2(\theta), \theta)}, where
-#' \deqn{r_j(\theta):=\mathrm{atan2}(S_m (\theta),
-#' C_m (\theta))} with \eqn{C_m(x) :=
-#' a_0/2 + \sum_{k=1}^m a_k \cos(kx)} and \eqn{S_m(x) :=
-#' \sum_{k=1}^m b_k \sin(kx)} for \eqn{j = 1,2}. \code{der_ridge_curve} and
-#' \code{dist_ridge_curve} compute the derivatives of and the distances along
-#' these curves, respectively. \code{arclength_ridge_curve} provides a uniform
-#' grid of the ridge curve using the arc-length parametrization.
-#' \code{proj_ridge_curve} gives the ridge's \eqn{\theta} for which the curve
-#' is closer to any point on \eqn{[-\pi, \pi)^2}.
+#' \deqn{r_j(\theta):=\mathrm{atan2}(S_m (\theta), C_m (\theta))}
+#' with \eqn{C_m(x) := a_0/2 + \sum_{k=1}^m a_k \cos(kx)} and
+#' \eqn{S_m(x) := \sum_{k=1}^m b_k \sin(kx)} for \eqn{j = 1,2}.
+#' \code{der_ridge_curve} and \code{dist_ridge_curve} compute the derivatives of
+#' and the distances along these curves, respectively.
+#' \code{arclength_ridge_curve} provides a uniform grid of the ridge curve using
+#' the arc-length parametrization. \code{proj_ridge_curve} gives the ridge's
+#' \eqn{\theta} for which the curve is closer to any point on
+#' \eqn{\mathbb{T}^2=[-\pi, \pi)^2}.
 #'
 #' @param theta vector \eqn{\theta} of size \code{nth}.
-#' @param mu a vector of size \code{2} giving \eqn{(\mu_1, \mu_2)}. Defaults
-#' to \code{c(0, 0)}.
-#' @param coefs list of coefficients \code{cos_a} (\eqn{a_k}) and
-#' \code{sin_b} (\eqn{b_k}) giving the Fourier fit of the ridge curve.
-#' Defaults to \code{list(cos_a = c(0, 0), sin_b = 0)}. See examples.
+#' @param mu a vector of size \code{2} giving \eqn{(\mu_1, \mu_2)}. Defaults to
+#' \code{c(0, 0)}.
+#' @param coefs list of coefficients \code{cos_a} (\eqn{a_k}) and \code{sin_b}
+#' (\eqn{b_k}) giving the Fourier fit of the ridge curve. Defaults to
+#' \code{list(cos_a = c(0, 0), sin_b = 0)}. See examples.
 #' @param ind_var index \eqn{j} of the variable that parametrizes the ridge.
 #' Defaults to \code{1}.
-#' @param norm normalize tangent vectors? If different from \code{NULL}
-#' (the default), the vectors are normalized to have the given \code{norm}.
+#' @param norm normalize tangent vectors? If different from \code{NULL} (the
+#' default), the vectors are normalized to have the given \code{norm}.
 #' @param alpha a vector of size \code{2}.
 #' @param x a matrix of size \code{c(nx, 2)} with angular coordinates.
 #' @param N number of discretization points for approximating curve lengths.
@@ -34,9 +34,9 @@
 #' \code{TRUE}.
 #' @param shortest return the shortest possible distance? Defaults to
 #' \code{TRUE}.
-#' @param ridge_curve_grid if provided, the \code{ridge_curve} evaluated at
-#' a grid of size \code{N}. If not provided, it is computed internally.
-#' Useful for saving computations.
+#' @param ridge_curve_grid if provided, the \code{ridge_curve} evaluated at a
+#' grid of size \code{N}. If not provided, it is computed internally. Useful for
+#' saving computations.
 #' @param arclength use the arc-length parametrization to compute the
 #' projections? This yields a more uniform grid for searching the projections.
 #' Defaults to \code{TRUE}.

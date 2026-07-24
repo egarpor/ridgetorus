@@ -1,15 +1,15 @@
 
 #' @title Toroidal pairs plot
 #'
-#' @description Pairs plots for data on \eqn{[-\pi, \pi)^d}, \eqn{d\geq 2}.
-#' The diagonal panels contain kernel density estimates tailored to
-#' circular data.
+#' @description Pairs plots for data on \eqn{\mathbb{T}^d=[-\pi, \pi)^d},
+#' \eqn{d\geq 2}. The diagonal panels contain kernel density estimates tailored
+#' to circular data.
 #'
 #' @inheritParams torus_dist
 #' @param max_dim the maximum number of scores to produce the scores plot.
 #' Defaults to \code{10}.
-#' @param columns if specified, the variables to be plotted. If \code{NULL}
-#' (the default), the first \code{max_dim} variables are plotted.
+#' @param columns if specified, the variables to be plotted. If \code{NULL} (the
+#' default), the first \code{max_dim} variables are plotted.
 #' @param col_data color(s) for the data points. Defaults to \code{1}.
 #' @param ylim_dens common \code{ylim} for the diagonal plots. Defaults to
 #' \code{c(0, 1.5)}.
@@ -184,7 +184,7 @@ torus_pairs <- function(x, max_dim = 10, columns = NULL, col_data = 1,
 #' @title Illustration of toroidal PCA via density ridges
 #'
 #' @description Shows the scores computation for PCA via density ridges on
-#' \eqn{[-\pi, \pi)^2}.
+#' \eqn{\mathbb{T}^2=[-\pi, \pi)^2}.
 #'
 #' @param fit the output of \code{\link{ridge_pca}}.
 #' @param n_max maximum number of data points to draw. These are sampled from

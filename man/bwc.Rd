@@ -42,8 +42,8 @@ concentrations? Defaults to \code{FALSE}.}
 \item{indep}{set the dependence parameter to zero? Defaults to \code{FALSE}.}
 
 \item{start}{a vector of length \code{5} with the initial values for the
-maximum likelihood optimizer. If \code{NULL} (default), the method of
-moments estimates are employed.}
+maximum likelihood optimizer. If \code{NULL} (default), the method of moments
+estimates are employed.}
 
 \item{lower, upper}{vectors of length \code{5} with the bounds for the
 likelihood optimizer. Default to \code{c(-pi, -pi, 0, 0, -1 + 1e-3)} and
@@ -65,10 +65,10 @@ likelihood optimizer. Default to \code{c(-pi, -pi, 0, 0, -1 + 1e-3)} and
 \description{
 Computation of the density of a bivariate wrapped Cauchy:
 \deqn{f(\theta_1, \theta_2)=c(\xi_1,\xi_2,\rho)\{c_0(\xi_1,\xi_2,\rho)-
-c_1(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1)-
-c_2(\xi_1,\xi_2,\rho)\cos (\theta_2-\mu_2)-\\
-c_3(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1) \cos (\theta_2-\mu_2)-
-c_4(\xi_1,\xi_2,\rho) \sin (\theta_1-\mu_1) \sin (\theta_2-\mu_2)\}^{-1}.}
+c_1(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1)- c_2(\xi_1,\xi_2,\rho)\cos
+(\theta_2-\mu_2)-\\ c_3(\xi_1,\xi_2,\rho) \cos (\theta_1-\mu_1) \cos
+(\theta_2-\mu_2)- c_4(\xi_1,\xi_2,\rho) \sin (\theta_1-\mu_1) \sin
+(\theta_2-\mu_2)\}^{-1}.}
 
 Simulation of samples from a bivariate wrapped Cauchy.
 
@@ -104,6 +104,5 @@ distributions, \code{\link{ridge_bwc}} for its density ridge, and
 \code{\link{ridge_pca}} for the toroidal PCA built on this model.
 }
 \author{
-The original code for \code{r_bwc} was supplied by
-Arthur Pewsey.
+The original code for \code{r_bwc} was supplied by Arthur Pewsey.
 }

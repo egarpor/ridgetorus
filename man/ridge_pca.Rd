@@ -17,7 +17,7 @@ ridge_pca(
 )
 }
 \arguments{
-\item{x}{matrix of dimension  \code{c(n, 2)} containing the \code{n}
+\item{x}{matrix of dimension \code{c(n, 2)} containing the \code{n}
 observations of the pair of angles.}
 
 \item{type}{either \code{"bvm"} (bivariate sine von Mises), \code{"bwc"}
@@ -29,8 +29,8 @@ Defaults to \code{5e2}.}
 
 \item{K}{number of terms in the Fourier expansion. Defaults to \code{15}.}
 
-\item{scale}{scale the resulting scores to \eqn{[-\pi, \pi)^2}? Defaults
-to \code{TRUE}.}
+\item{scale}{scale the resulting scores to \eqn{\mathbb{T}^2=[-\pi, \pi)^2}?
+Defaults to \code{TRUE}.}
 
 \item{lrts}{run \code{\link{biv_lrt}} to check the null hypothesis of
 homogeneous concentration parameters using likelihood ratio tests? If
@@ -40,8 +40,8 @@ cases to become "sticky" fits.}
 \item{alpha}{significance level for the homogeneity test.}
 
 \item{at2}{do the \code{atan2} fit instead of the sine fit (only using
-\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not
-recommended to use.}
+\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not recommended to
+use.}
 
 \item{...}{optional parameters passed to \code{\link{fit_bvm_mle}} and
 \code{\link{fit_bwc_mle}}, such as \code{start}, \code{lower}, or
@@ -63,11 +63,11 @@ A list with:
 \item{p_indep}{\eqn{p}-value of the independence test.}
 }
 \description{
-This function computes the whole process of toroidal PCA
-via density ridges on a given sample: parameter estimation of the
-underlying distribution, estimation of the connected component of the ridge,
-and determination of its Fourier expansion from which to obtain the first
-and second scores.
+This function computes the whole process of toroidal PCA via
+density ridges on a given sample: parameter estimation of the underlying
+distribution, estimation of the connected component of the ridge, and
+determination of its Fourier expansion from which to obtain the first and
+second scores.
 }
 \examples{
 \donttest{

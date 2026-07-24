@@ -1,8 +1,9 @@
 
 #' @title Scores and scales for Fourier-fitted ridge curves
 #'
-#' @description Computation of PCA scores for \link[=ridge_curve]{
-#' Fourier-fitted ridge curves}. The scores are defined as follows:
+#' @description Computation of PCA scores for
+#' \link[=ridge_curve]{ Fourier-fitted ridge curves}. The scores are defined as
+#' follows:
 #' \itemize{
 #'   \item First scores: signed distances along the ridge curve of the data
 #'   projections to \eqn{\mu}.
@@ -10,12 +11,12 @@
 #'   their ridge projections.
 #' }
 #' The scores can be scaled to \eqn{(-\pi, \pi)} or remain as
-#' \eqn{(l / 2, m_2)}, where \eqn{l} is the length of the curve and \eqn{m_2}
-#' is the maximal absolute second score.
+#' \eqn{(l / 2, m_2)}, where \eqn{l} is the length of the curve and \eqn{m_2} is
+#' the maximal absolute second score.
 #'
 #' @inheritParams ridge_curve
-#' @param scale scale the resulting scores to \eqn{[-\pi, \pi)^2}? Defaults
-#' to \code{TRUE}.
+#' @param scale scale the resulting scores to \eqn{\mathbb{T}^2=[-\pi, \pi)^2}?
+#' Defaults to \code{TRUE}.
 #' @inheritParams ridge_fourier_fit
 #' @param L grid along the variable \code{ind_var} used for searching the
 #' maximum allowed second score. Defaults to \code{25}.
@@ -83,9 +84,9 @@
 #'
 #' }
 #' par(old_par)
-#' @seealso \code{\link{ridge_curve}} for the fitted ridge, \code{\link{frechet}}
-#' for the variance decomposition of the scores, and \code{\link{ridge_pca}}
-#' for the full toroidal PCA.
+#' @seealso \code{\link{ridge_curve}} for the fitted ridge,
+#' \code{\link{frechet}} for the variance decomposition of the scores, and
+#' \code{\link{ridge_pca}} for the full toroidal PCA.
 #' @export
 ridge_scores <- function(x, mu = c(0, 0), coefs =
                            list(cos_a = c(0, 0), sin_b = 0),

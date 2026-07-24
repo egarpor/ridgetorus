@@ -27,12 +27,12 @@ max_score_2(
 \arguments{
 \item{x}{a matrix of size \code{c(nx, 2)} with angular coordinates.}
 
-\item{mu}{a vector of size \code{2} giving \eqn{(\mu_1, \mu_2)}. Defaults
-to \code{c(0, 0)}.}
+\item{mu}{a vector of size \code{2} giving \eqn{(\mu_1, \mu_2)}. Defaults to
+\code{c(0, 0)}.}
 
-\item{coefs}{list of coefficients \code{cos_a} (\eqn{a_k}) and
-\code{sin_b} (\eqn{b_k}) giving the Fourier fit of the ridge curve.
-Defaults to \code{list(cos_a = c(0, 0), sin_b = 0)}. See examples.}
+\item{coefs}{list of coefficients \code{cos_a} (\eqn{a_k}) and \code{sin_b}
+(\eqn{b_k}) giving the Fourier fit of the ridge curve. Defaults to
+\code{list(cos_a = c(0, 0), sin_b = 0)}. See examples.}
 
 \item{ind_var}{index \eqn{j} of the variable that parametrizes the ridge.
 Defaults to \code{1}.}
@@ -40,12 +40,12 @@ Defaults to \code{1}.}
 \item{N}{number of discretization points for approximating curve lengths.
 Defaults to \code{5e2}.}
 
-\item{scale}{scale the resulting scores to \eqn{[-\pi, \pi)^2}? Defaults
-to \code{TRUE}.}
+\item{scale}{scale the resulting scores to \eqn{\mathbb{T}^2=[-\pi, \pi)^2}?
+Defaults to \code{TRUE}.}
 
 \item{at2}{do the \code{atan2} fit instead of the sine fit (only using
-\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not
-recommended to use.}
+\eqn{S_m})? Defaults to \code{TRUE}. \code{at2 = FALSE} is not recommended to
+use.}
 
 \item{L}{grid along the variable \code{ind_var} used for searching the
 maximum allowed second score. Defaults to \code{25}.}
@@ -61,8 +61,9 @@ maximum allowed second score. Defaults to \code{25}.}
 \code{scale = TRUE}.
 }
 \description{
-Computation of PCA scores for \link[=ridge_curve]{
-Fourier-fitted ridge curves}. The scores are defined as follows:
+Computation of PCA scores for
+\link[=ridge_curve]{ Fourier-fitted ridge curves}. The scores are defined as
+follows:
 \itemize{
   \item First scores: signed distances along the ridge curve of the data
   projections to \eqn{\mu}.
@@ -70,8 +71,8 @@ Fourier-fitted ridge curves}. The scores are defined as follows:
   their ridge projections.
 }
 The scores can be scaled to \eqn{(-\pi, \pi)} or remain as
-\eqn{(l / 2, m_2)}, where \eqn{l} is the length of the curve and \eqn{m_2}
-is the maximal absolute second score.
+\eqn{(l / 2, m_2)}, where \eqn{l} is the length of the curve and \eqn{m_2} is
+the maximal absolute second score.
 }
 \details{
 The mean \eqn{\mu} corresponds to the first score being null.
@@ -133,7 +134,7 @@ for (j in 1:2) {
 par(old_par)
 }
 \seealso{
-\code{\link{ridge_curve}} for the fitted ridge, \code{\link{frechet}}
-for the variance decomposition of the scores, and \code{\link{ridge_pca}}
-for the full toroidal PCA.
+\code{\link{ridge_curve}} for the fitted ridge,
+\code{\link{frechet}} for the variance decomposition of the scores, and
+\code{\link{ridge_pca}} for the full toroidal PCA.
 }
