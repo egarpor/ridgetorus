@@ -24,7 +24,8 @@ Computation of distances on \eqn{\mathbb{T}^d=[-\pi, \pi)^d},
 \eqn{d\geq 1}, between two sets of observations.
 }
 \details{
-The maximal distance on \eqn{\mathbb{T}^d=[-\pi, \pi)^d} is \eqn{\sqrt{d}\pi}.
+The maximal distance on \eqn{\mathbb{T}^d=[-\pi, \pi)^d} is
+\eqn{\sqrt{d}\pi}.
 }
 \examples{
 # Illustration of torus distances

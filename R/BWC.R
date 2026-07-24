@@ -18,8 +18,8 @@
 #'   at \code{x}.
 #'   \item \code{r_bwc}: a matrix of size \code{c(n, 2)} with the random sample.
 #'   \item \code{fit_bwc_mm, fit_bwc_mle}: a list with the parameters
-#'   \eqn{(\mu_1, \mu_2, \xi_1, \xi_2, \rho)}. \code{fit_bwc_mle} also returns the
-#'   object \code{opt} with the optimization summary.
+#'   \eqn{(\mu_1, \mu_2, \xi_1, \xi_2, \rho)}. \code{fit_bwc_mle} also returns
+#'   the object \code{opt} with the optimization summary.
 #' }
 #' @references
 #' Kato, S. and Pewsey, A. (2015). A Möbius transformation-induced distribution

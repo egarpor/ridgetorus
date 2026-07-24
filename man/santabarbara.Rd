@@ -28,10 +28,10 @@ NOAA High Frequency Radar National Server}.
 \details{
 The selection of these four areas is motivated by previous studies on the
 Santa Barbara currents, like Auad et al. (1998). The direction is measured
-in radians in \eqn{\mathbb{T}=[-\pi, \pi)} with \eqn{-\pi} / \eqn{-\frac{\pi}{2}} /
-\eqn{0} / \eqn{\frac{\pi}{2}} / \eqn{\pi} representing the
-East / South / West / North / East directions. The script performing the data
-preprocessing is available at
+in radians in \eqn{\mathbb{T}=[-\pi, \pi)} with \eqn{-\pi} /
+\eqn{-\frac{\pi}{2}} / \eqn{0} / \eqn{\frac{\pi}{2}} / \eqn{\pi} representing
+the East / South / West / North / East directions. The script performing the
+data preprocessing is available at
 \href{https://github.com/egarpor/ridgetorus/blob/master/data-raw/data-acquisition.R}{
 \code{data-acquisition.R}}. The data was retrieved on 2022-10-21.
 }

@@ -199,8 +199,8 @@ extract_theta <- function(results, hours) {
 
   }
 
-  theta <- results[, c("group", "d", "speed")] %>%
-    group_by(group) %>%
+  theta <- results[, c("group", "d", "speed")] |>
+    group_by(group) |>
     do(data.frame(val = speedw_mean(.)))
 
   return(theta)
@@ -246,7 +246,7 @@ D <- extract_theta(results_D, hours = 24)
 
 # Merge results
 df_list <- list(A, B, C, D)
-santabarbara <- as.data.frame(na.omit(df_list %>%
+santabarbara <- as.data.frame(na.omit(df_list |>
                                         reduce(full_join, by = "group"))[, 2:5])
 
 # Change column names

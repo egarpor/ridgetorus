@@ -147,7 +147,8 @@ frechet_ss <- function(x, l = pi, N = 5e2, draw_plot = FALSE) {
 #' \code{ncol(x)}.
 #' @param squared return the squared distance? Defaults to \code{FALSE}.
 #' @details
-#' The maximal distance on \eqn{\mathbb{T}^d=[-\pi, \pi)^d} is \eqn{\sqrt{d}\pi}.
+#' The maximal distance on \eqn{\mathbb{T}^d=[-\pi, \pi)^d} is
+#' \eqn{\sqrt{d}\pi}.
 #' @return A vector of size \code{nx} with the distances between the
 #' observations of \code{x} and \code{y}.
 #' @examples
