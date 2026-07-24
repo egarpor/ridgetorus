@@ -52,4 +52,7 @@ Statistical Mathematics}, 67(5):843--862. \doi{10.1007/s10463-014-0493-6}
 Rivest, L.-P. (1997). A decentred predictor for circular-circular
 regression. \emph{Biometrika}, 84(3):717--726. \doi{10.1093/biomet/84.3.717}
 }
+\seealso{
+\code{\link{ridge_pca}} for the toroidal PCA of this dataset.
+}
 \keyword{datasets}

@@ -63,7 +63,7 @@ proj_ridge_curve(
 to \code{c(0, 0)}.}
 
 \item{coefs}{list of coefficients \code{cos_a} (\eqn{a_k}) and
-\code{sin_b} (\eqn{b_k} giving the Fourier fit of the ridge curve.
+\code{sin_b} (\eqn{b_k}) giving the Fourier fit of the ridge curve.
 Defaults to \code{list(cos_a = c(0, 0), sin_b = 0)}. See examples.}
 
 \item{ind_var}{index \eqn{j} of the variable that parametrizes the ridge.
@@ -125,7 +125,7 @@ C_m (\theta))} with \eqn{C_m(x) :=
 a_0/2 + \sum_{k=1}^m a_k \cos(kx)} and \eqn{S_m(x) :=
 \sum_{k=1}^m b_k \sin(kx)} for \eqn{j = 1,2}. \code{der_ridge_curve} and
 \code{dist_ridge_curve} compute the derivatives of and the distances along
-these curves, respectively. \code{alpha_ridge_curve} provides a uniform
+these curves, respectively. \code{arclength_ridge_curve} provides a uniform
 grid of the ridge curve using the arc-length parametrization.
 \code{proj_ridge_curve} gives the ridge's \eqn{\theta} for which the curve
 is closer to any point on \eqn{[-\pi, \pi)^2}.
@@ -229,4 +229,9 @@ for (j in 1:2) {
 
 }
 par(old_par)
+}
+\seealso{
+\code{\link{ridge_fourier_fit}} to obtain \code{coefs} from a ridge,
+\code{\link{ridge_scores}} for the associated PCA scores, and
+\code{\link{ridge_pca}} for the full toroidal PCA.
 }

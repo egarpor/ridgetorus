@@ -57,9 +57,9 @@ likelihood optimizer. Default to \code{c(-pi, -pi, 0, 0, -1 + 1e-3)} and
   \item \code{d_bwc}: a vector of length \code{nx} with the density evaluated
   at \code{x}.
   \item \code{r_bwc}: a matrix of size \code{c(n, 2)} with the random sample.
-  \item \code{fit_mme_bwc, fit_mle_bwc}: a list with the parameters
-  \eqn{(\mu_1, \mu_2, \xi_1, \xi_2, \rho)} and the object \code{opt}
-  containing the optimization summary.
+  \item \code{fit_bwc_mm, fit_bwc_mle}: a list with the parameters
+  \eqn{(\mu_1, \mu_2, \xi_1, \xi_2, \rho)}. \code{fit_bwc_mle} also returns the
+  object \code{opt} with the optimization summary.
 }
 }
 \description{
@@ -91,12 +91,17 @@ filled.contour(th, th, matrix(d, nth, nth), col = viridisLite::viridis(20),
 
 n <- 100
 samp <- r_bwc(n = n, mu = mu, xi = xi)
-(param_mm <- fit_bwc_mm(samp)$par)
-(param_mle <- fit_bwc_mle(samp)$par)
+(param_mm <- fit_bwc_mm(samp))
+(param_mle <- fit_bwc_mle(samp)$opt$par)
 }
 \references{
 Kato, S. and Pewsey, A. (2015). A Möbius transformation-induced distribution
 on the torus. \emph{Biometrika}, 102(2):359--370. \doi{10.1093/biomet/asv003}
+}
+\seealso{
+\code{\link{bvm}} and \code{\link{bwn}} for the other toroidal
+distributions, \code{\link{ridge_bwc}} for its density ridge, and
+\code{\link{ridge_pca}} for the toroidal PCA built on this model.
 }
 \author{
 The original code for \code{r_bwc} was supplied by
