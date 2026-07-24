@@ -17,7 +17,7 @@
 #' @param scale scale the resulting scores to \eqn{[-\pi, \pi)^2}? Defaults
 #' to \code{TRUE}.
 #' @inheritParams ridge_fourier_fit
-#' @param L grid along he variable \code{ind_var} used for searching the
+#' @param L grid along the variable \code{ind_var} used for searching the
 #' maximum allowed second score. Defaults to \code{25}.
 #' @param f factor for shrinking the grid on the variable that is different to
 #' \code{ind_var}. Defaults to \code{2}.
@@ -83,6 +83,9 @@
 #'
 #' }
 #' par(old_par)
+#' @seealso \code{\link{ridge_curve}} for the fitted ridge, \code{\link{frechet}}
+#' for the variance decomposition of the scores, and \code{\link{ridge_pca}}
+#' for the full toroidal PCA.
 #' @export
 ridge_scores <- function(x, mu = c(0, 0), coefs =
                            list(cos_a = c(0, 0), sin_b = 0),
@@ -167,8 +170,7 @@ max_score_2 <- function(mu = c(0, 0), coefs =
 
   # Grid targeting the regions giving the maximal separation from ridge curve
   th_2 <- sdetorus::toPiInt(pi + seq(-pi / f, pi / f, l = L))
-  sc_2_grid <- ridge_curve(theta = th_1, mu = mu, coefs = coefs,
-                           ind_var = ind_var, at2 = at2)
+  sc_2_grid <- ridge_curve_grid
   not_ind_var <- ifelse(ind_var == 1, 2, 1)
   sc_2_grid <- c(sdetorus::toPiInt(outer(sc_2_grid[, not_ind_var], th_2, "+")))
   sc_2_grid <- switch(ind_var, cbind(th_1, sc_2_grid), cbind(sc_2_grid, th_1))
