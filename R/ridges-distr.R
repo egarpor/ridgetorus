@@ -111,18 +111,18 @@ H_eigenval_2 <- function(kmax = 1, theta, kappa, xi, mu, Sigma, type) {
     K <- expand.grid(k, k)
     n <- nrow(theta)
 
+    # Precompute Sigma^{-1} once (constant across all evaluation points)
+    p <- length(mu)
+    stopifnot(ncol(theta) == p & nrow(Sigma) == p & ncol(Sigma) == p)
+    Sigma_inv <- solve(Sigma)
+
     u <- numeric(length = n)
     v <- numeric(length = n)
     w <- numeric(length = n)
     Hess_norm <- function(x) {
 
-      # Check dimensions
-      x <- rbind(x)
-      p <- length(mu)
-      stopifnot(ncol(x) == p & nrow(Sigma) == p & ncol(Sigma) == p)
-
       # Hessian
-      Sigma_inv <- solve(Sigma)
+      x <- rbind(x)
       H <- apply(x, 1, function(y) {
         mvtnorm::dmvnorm(x = y, mean = mu, sigma = Sigma) *
           (Sigma_inv %*% tcrossprod(y - mu) %*% Sigma_inv - Sigma_inv)
@@ -200,11 +200,17 @@ filtering <- function(solution, quadrant, max_dist = 0.1) {
   j <- 1
 
   # While the closest point is near enough, keep adding points
-  while (min(sqrt((theta1 - lastpoint[1])^2 + (theta2 - lastpoint[2])^2)) <
-         max_dist && j < (ntotal - 1)) {
+  repeat {
 
     # Calculate all distances
     distances <- sqrt((theta1 - lastpoint[1])^2 + (theta2 - lastpoint[2])^2)
+
+    # Stop when the closest point is too far or the points are exhausted
+    if (!(min(distances) < max_dist && j < (ntotal - 1))) {
+
+      break
+
+    }
 
     # Find the index of the point with the minimum distance
     index <- which.min(distances)
@@ -293,6 +299,9 @@ filtering <- function(solution, quadrant, max_dist = 0.1) {
 #' ridge <- ridge_bwn(mu = mu, Sigma = Sigma, subint_1 = 5e2,
 #'                    subint_2 = 5e2)
 #' points(ridge)}
+#' @seealso \code{\link{ridge_fourier_fit}} and \code{\link{ridge_curve}} to
+#' turn the ridge into a Fourier curve, and \code{\link{ridge_pca}} for the
+#' full toroidal PCA.
 #' @export
 #' @name ridge_distr
 
@@ -383,16 +392,12 @@ ridge_bvm <- function(mu, kappa, eval_points, subint_1, subint_2) {
       # Check the eigenvalue condition for each candidate
       if (lsol >= 1) {
 
-        isridge <- numeric(length = lsol)
-        for (j in seq_len(lsol)) {
+        # Vectorized eigenvalue check over all candidates at this theta1
+        isridge <- H_eigenval_2(theta = cbind(theta1[i], sol),
+                                kappa = c(k1, k2, lambda),
+                                type = "bvm") <= 0
 
-          isridge[j] <- H_eigenval_2(theta = c(theta1[i], sol[j]),
-                                     kappa = c(k1, k2, lambda),
-                                     type = "bvm") <= 0
-
-        }
-
-        sol <- sol[isridge == 1]
+        sol <- sol[isridge]
         if (length(sol) > 0) {
 
           sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
@@ -512,16 +517,11 @@ ridge_bwc <- function(mu, xi, eval_points, subint_1, subint_2) {
 
       if (lsol >= 1) {
 
-        isridge <- numeric(length = lsol)
-        for (j in seq_len(lsol)) {
+        # Vectorized eigenvalue check over all candidates at this theta1
+        isridge <- H_eigenval_2(theta = cbind(theta1[i], sol),
+                                xi = c(xi1, xi2, rho), type = "bwc") <= 0
 
-          # Check the eigenvalue condition for each candidate
-          isridge[j] <- H_eigenval_2(theta = c(theta1[i], sol[j]),
-                                     xi = c(xi1, xi2, rho), type = "bwc") <= 0
-
-        }
-
-        sol <- sol[isridge == 1]
+        sol <- sol[isridge]
         if (length(sol) > 0) {
 
           sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
@@ -622,16 +622,11 @@ ridge_bwn <- function(mu, Sigma, kmax = 2, eval_points,
 
     if (lsol >= 1) {
 
-      isridge <- numeric(length = lsol)
-      for (j in seq_len(lsol)) {
+      # Vectorized eigenvalue check over all candidates at this theta1
+      isridge <- H_eigenval_2(theta = cbind(theta1[i], sol), kmax = kmax,
+                              Sigma = Sigma, mu = mu, type = "bwn") <= 0
 
-        # Check the eigenvalue condition for each candidate
-        isridge[j] <- H_eigenval_2(theta = c(theta1[i], sol[j]), kmax = kmax,
-                                   Sigma = Sigma, mu = mu, type = "bwn") <= 0
-
-      }
-
-      sol <- sol[isridge == 1]
+      sol <- sol[isridge]
       if (length(sol) > 0) {
 
         sol <- sol[abs(implicit_equation(theta2 = sol, theta1 = theta1[i],
